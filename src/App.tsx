@@ -3,6 +3,7 @@ import { Map as MapIcon, Compass, Trophy } from 'lucide-react';
 import VietnamMap from './components/VietnamMap';
 import ProvinceInfo from './components/ProvinceInfo';
 import Gameshow from './components/Gameshow';
+import AIAssistant from './components/AIAssistant';
 import { getProvinceData, Province } from './data/provinces';
 
 export default function App() {
@@ -31,7 +32,6 @@ export default function App() {
       x: e.clientX, 
       y: e.clientY 
     });
-    setSelectedProvinceName(name);
   };
 
   const handleProvinceLeave = () => {
@@ -117,6 +117,9 @@ export default function App() {
           </div>
         )}
       </div>
+
+      {/* AI Assistant */}
+      <AIAssistant />
     </div>
   );
 }

@@ -6,107 +6,107 @@ const geoUrl = "https://code.highcharts.com/mapdata/countries/vn/vn-all.topo.jso
 
 // Mapping từ hc-key của bản đồ sang 34 tỉnh thành (theo địa lý hành chính mới giả định)
 const provinceMap: Record<string, string> = {
-  "vn-318": "Hà Nội",
-  "vn-ho": "Hà Nội",
-  "vn-vc": "Phú Thọ",
-  "vn-pt": "Phú Thọ",
-  "vn-bn": "Bắc Ninh",
-  "vn-bg": "Bắc Ninh",
-  "vn-qn": "Quảng Ninh",
-  "vn-3623": "Hải Phòng",
-  "vn-hd": "Hải Phòng",
-  "vn-317": "Hải Phòng",
-  "vn-tb": "Hải Phòng",
-  "vn-nd": "Hải Phòng",
-  "vn-hm": "Ninh Bình",
-  "vn-nb": "Ninh Bình",
-  "vn-hg": "Hà Giang",
-  "vn-tq": "Tuyên Quang",
-  "vn-cb": "Cao Bằng",
-  "vn-307": "Thái Nguyên",
-  "vn-ty": "Thái Nguyên",
-  "vn-ls": "Lạng Sơn",
-  "vn-lo": "Lào Cai",
-  "vn-yb": "Lào Cai",
-  "vn-db": "Điện Biên",
   "vn-li": "Lai Châu",
+  "vn-db": "Điện Biên",
   "vn-311": "Sơn La",
+  "vn-lo": "Lào Cai - Yên Bái",
+  "vn-yb": "Lào Cai - Yên Bái",
+  "vn-hg": "Hà Giang - Tuyên Quang",
+  "vn-tq": "Hà Giang - Tuyên Quang",
+  "vn-cb": "Cao Bằng",
+  "vn-307": "Bắc Kạn - Thái Nguyên",
+  "vn-ty": "Bắc Kạn - Thái Nguyên",
+  "vn-ls": "Lạng Sơn",
+  "vn-qn": "Quảng Ninh",
+  "vn-ho": "Phú Thọ - Vĩnh Phúc - Hòa Bình",
+  "vn-pt": "Phú Thọ - Vĩnh Phúc - Hòa Bình",
+  "vn-vc": "Phú Thọ - Vĩnh Phúc - Hòa Bình",
+  "vn-318": "Hà Nội",
+  "vn-bn": "Bắc Ninh - Bắc Giang",
+  "vn-bg": "Bắc Ninh - Bắc Giang",
+  "vn-3623": "Hải Phòng",
+  "vn-hd": "Hải Dương - Hưng Yên - Thái Bình",
+  "vn-317": "Hải Dương - Hưng Yên - Thái Bình",
+  "vn-tb": "Hải Dương - Hưng Yên - Thái Bình",
+  "vn-nd": "Hà Nam - Nam Định - Ninh Bình",
+  "vn-nb": "Hà Nam - Nam Định - Ninh Bình",
+  "vn-hm": "Hà Nam - Nam Định - Ninh Bình",
   "vn-th": "Thanh Hóa",
   "vn-na": "Nghệ An",
   "vn-328": "Hà Tĩnh",
-  "vn-qb": "Quảng Trị",
-  "vn-qt": "Quảng Trị",
+  "vn-qb": "Quảng Bình - Quảng Trị",
+  "vn-qt": "Quảng Bình - Quảng Trị",
   "vn-tt": "TP. Huế",
-  "vn-da": "TP. Đà Nẵng",
-  "vn-300": "TP. Đà Nẵng",
+  "vn-da": "Đà Nẵng - Quảng Nam",
+  "vn-300": "Đà Nẵng - Quảng Nam",
   "vn-qg": "Quảng Ngãi",
-  "vn-299": "Gia Lai",
-  "vn-724": "Gia Lai",
-  "vn-723": "Đắk Lắk",
-  "vn-6365": "Đắk Lắk",
-  "vn-ld": "Lâm Đồng",
-  "vn-bd": "Khánh Hòa",
-  "vn-py": "Khánh Hòa",
-  "vn-kh": "Khánh Hòa",
-  "vn-nt": "Khánh Hòa",
-  "vn-bu": "Đồng Nai",
-  "vn-bv": "Đồng Nai",
-  "vn-331": "Đồng Nai",
-  "vn-bp": "Tây Ninh",
+  "vn-724": "Gia Lai - Kon Tum - Bình Định",
+  "vn-299": "Gia Lai - Kon Tum - Bình Định",
+  "vn-bd": "Gia Lai - Kon Tum - Bình Định",
+  "vn-723": "Đắk Lắk - Đắk Nông",
+  "vn-6365": "Đắk Lắk - Đắk Nông",
+  "vn-py": "Phú Yên - Khánh Hòa - Ninh Thuận",
+  "vn-kh": "Phú Yên - Khánh Hòa - Ninh Thuận",
+  "vn-nt": "Phú Yên - Khánh Hòa - Ninh Thuận",
+  "vn-ld": "Lâm Đồng - Bình Thuận",
+  "vn-bu": "Lâm Đồng - Bình Thuận",
+  "vn-bp": "Bình Phước - Bình Dương - Đồng Nai",
+  "vn-bi": "Bình Phước - Bình Dương - Đồng Nai",
+  "vn-331": "Bình Phước - Bình Dương - Đồng Nai",
   "vn-tn": "Tây Ninh",
-  "vn-bi": "TP. Hồ Chí Minh",
-  "vn-hc": "TP. Hồ Chí Minh",
-  "vn-la": "Long An",
-  "vn-tg": "Đồng Tháp mới",
-  "vn-dt": "Đồng Tháp mới",
-  "vn-ag": "An Giang",
-  "vn-br": "TP. Cần Thơ",
-  "vn-vl": "TP. Cần Thơ",
-  "vn-tv": "TP. Cần Thơ",
-  "vn-333": "TP. Cần Thơ",
-  "vn-337": "TP. Cần Thơ",
-  "vn-st": "TP. Cần Thơ",
-  "vn-kg": "Cà Mau",
-  "vn-cm": "Cà Mau",
-  "vn-bl": "Cà Mau"
+  "vn-hc": "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu",
+  "vn-la": "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu",
+  "vn-bv": "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu",
+  "vn-dt": "Đồng Tháp - Tiền Giang",
+  "vn-tg": "Đồng Tháp - Tiền Giang",
+  "vn-vl": "Vĩnh Long - Bến Tre - Trà Vinh",
+  "vn-br": "Vĩnh Long - Bến Tre - Trà Vinh",
+  "vn-tv": "Vĩnh Long - Bến Tre - Trà Vinh",
+  "vn-333": "TP. Cần Thơ - Hậu Giang - Sóc Trăng",
+  "vn-337": "TP. Cần Thơ - Hậu Giang - Sóc Trăng",
+  "vn-st": "TP. Cần Thơ - Hậu Giang - Sóc Trăng",
+  "vn-ag": "An Giang - Kiên Giang",
+  "vn-kg": "An Giang - Kiên Giang",
+  "vn-bl": "Bạc Liêu - Cà Mau",
+  "vn-cm": "Bạc Liêu - Cà Mau"
 };
 
 // Bảng màu cho 34 tỉnh thành để hiển thị ranh giới rõ ràng
 const provinceColors: Record<string, string> = {
-  "Lai Châu": "#ffcc00", // Yellow
-  "Điện Biên": "#ff7b00", // Orange
-  "Sơn La": "#2563eb", // Blue
-  "Lào Cai": "#06b6d4", // Cyan
-  "Hà Giang": "#ff7b00", // Orange
-  "Tuyên Quang": "#ff7b00", // Orange
-  "Cao Bằng": "#ffcc00", // Yellow
-  "Lạng Sơn": "#2563eb", // Blue
-  "Thái Nguyên": "#10b981", // Green
-  "Bắc Ninh": "#ff7b00", // Orange
-  "Quảng Ninh": "#06b6d4", // Cyan
-  "Phú Thọ": "#ffcc00", // Yellow
-  "Hà Nội": "#2563eb", // Blue
-  "Hải Phòng": "#10b981", // Green
-  "Ninh Bình": "#ff7b00", // Orange
-  "Thanh Hóa": "#06b6d4", // Cyan
-  "Nghệ An": "#ffcc00", // Yellow
-  "Hà Tĩnh": "#ff7b00", // Orange
-  "Quảng Trị": "#ffcc00", // Yellow
-  "TP. Huế": "#06b6d4", // Cyan
-  "TP. Đà Nẵng": "#ff7b00", // Orange
-  "Quảng Ngãi": "#06b6d4", // Cyan
-  "Gia Lai": "#2563eb", // Blue
-  "Đắk Lắk": "#06b6d4", // Cyan
-  "Lâm Đồng": "#ffcc00", // Yellow
-  "Khánh Hòa": "#ff7b00", // Orange
-  "Đồng Nai": "#10b981", // Green
-  "Tây Ninh": "#ffcc00", // Yellow
-  "TP. Hồ Chí Minh": "#2563eb", // Blue
-  "Long An": "#2563eb", // Blue
-  "Đồng Tháp mới": "#ff7b00", // Orange
-  "An Giang": "#2563eb", // Blue
-  "TP. Cần Thơ": "#ffcc00", // Yellow
-  "Cà Mau": "#ff7b00", // Orange
+  "Lai Châu": "#ffcc00",
+  "Điện Biên": "#ff7b00",
+  "Sơn La": "#2563eb",
+  "Lào Cai - Yên Bái": "#06b6d4",
+  "Hà Giang - Tuyên Quang": "#10b981",
+  "Cao Bằng": "#ff7b00",
+  "Bắc Kạn - Thái Nguyên": "#06b6d4",
+  "Lạng Sơn": "#2563eb",
+  "Quảng Ninh": "#ffcc00",
+  "Phú Thọ - Vĩnh Phúc - Hòa Bình": "#ff7b00",
+  "Hà Nội": "#2563eb",
+  "Bắc Ninh - Bắc Giang": "#10b981",
+  "Hải Phòng": "#06b6d4",
+  "Hải Dương - Hưng Yên - Thái Bình": "#ffcc00",
+  "Hà Nam - Nam Định - Ninh Bình": "#10b981",
+  "Thanh Hóa": "#ffcc00",
+  "Nghệ An": "#ff7b00",
+  "Hà Tĩnh": "#2563eb",
+  "Quảng Bình - Quảng Trị": "#06b6d4",
+  "TP. Huế": "#10b981",
+  "Đà Nẵng - Quảng Nam": "#ff7b00",
+  "Quảng Ngãi": "#2563eb",
+  "Gia Lai - Kon Tum - Bình Định": "#06b6d4",
+  "Đắk Lắk - Đắk Nông": "#10b981",
+  "Phú Yên - Khánh Hòa - Ninh Thuận": "#ffcc00",
+  "Lâm Đồng - Bình Thuận": "#ff7b00",
+  "Bình Phước - Bình Dương - Đồng Nai": "#2563eb",
+  "Tây Ninh": "#06b6d4",
+  "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu": "#10b981",
+  "Đồng Tháp - Tiền Giang": "#ffcc00",
+  "Vĩnh Long - Bến Tre - Trà Vinh": "#ff7b00",
+  "TP. Cần Thơ - Hậu Giang - Sóc Trăng": "#06b6d4",
+  "An Giang - Kiên Giang": "#2563eb",
+  "Bạc Liêu - Cà Mau": "#10b981"
 };
 
 interface VietnamMapProps {

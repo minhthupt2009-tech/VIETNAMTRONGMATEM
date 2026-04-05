@@ -26,34 +26,6 @@ export interface MatchingQuestion extends BaseQuestion {
 
 export type GameQuestion = MultipleChoiceQuestion | FillBlankQuestion | MatchingQuestion;
 
-import { Province } from './provinces';
-
-export type QuestionType = 'MULTIPLE_CHOICE' | 'FILL_BLANK' | 'MATCHING';
-
-export interface BaseQuestion {
-  id: string;
-  type: QuestionType;
-  question: string;
-}
-
-export interface MultipleChoiceQuestion extends BaseQuestion {
-  type: 'MULTIPLE_CHOICE';
-  options: string[];
-  correctAnswer: string;
-}
-
-export interface FillBlankQuestion extends BaseQuestion {
-  type: 'FILL_BLANK';
-  correctAnswers: string[];
-}
-
-export interface MatchingQuestion extends BaseQuestion {
-  type: 'MATCHING';
-  pairs: { left: string; right: string }[];
-}
-
-export type GameQuestion = MultipleChoiceQuestion | FillBlankQuestion | MatchingQuestion;
-
 const generalQuestionBank: GameQuestion[] = [
   {
     id: 'g1',
@@ -304,25 +276,25 @@ export const getProvinceQuestions = (province: Province, count: number = 5): Gam
 
   // 4. Food 1
   if (province.food && province.food.length > 0) {
-    const food = province.food[0];
-    const wrongFoods = ["Phở Hà Nội", "Bún bò Huế", "Mì Quảng", "Bánh xèo miền Tây", "Cơm tấm Sài Gòn", "Chả cá Lã Vọng", "Bún chả", "Gỏi cuốn"].filter(f => f !== food).sort(() => 0.5 - Math.random());
+    const foodName = province.food[0].name;
+    const wrongFoods = ["Phở Hà Nội", "Bún bò Huế", "Mì Quảng", "Bánh xèo miền Tây", "Cơm tấm Sài Gòn", "Chả cá Lã Vọng", "Bún chả", "Gỏi cuốn"].filter(f => f !== foodName).sort(() => 0.5 - Math.random());
     questions.push({
       id: `p_q4_${province.name}`,
       type: 'MULTIPLE_CHOICE',
       question: `Đâu là một trong những món ăn đặc sản của ${province.name}?`,
-      options: [food, ...wrongFoods.slice(0, 3)].sort(() => 0.5 - Math.random()),
-      correctAnswer: food
+      options: [foodName, ...wrongFoods.slice(0, 3)].sort(() => 0.5 - Math.random()),
+      correctAnswer: foodName
     });
   }
 
   // 5. Food 2
   if (province.food && province.food.length > 1) {
-    const food = province.food[1];
+    const foodName = province.food[1].name;
     questions.push({
       id: `p_q5_${province.name}`,
       type: 'FILL_BLANK',
       question: `Điền tên món ăn: Một đặc sản khác của ${province.name} là ________.`,
-      correctAnswers: [food, food.toLowerCase()]
+      correctAnswers: [foodName, foodName.toLowerCase()]
     });
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "Vietnam GeoExplorer",
-  "description": "Ứng dụng khám phá địa lý, du lịch, văn hóa và ẩm thực của 63 tỉnh thành Việt Nam.",
+  "description": "Ứng dụng khám phá địa lý, du lịch, văn hóa và ẩm thực của 34 tỉnh thành Việt Nam (theo phân vùng hành chính mới).",
   "requestFramePermissions": [
     "geolocation"
   ]

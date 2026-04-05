@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Maximize, Users, BookOpen, Utensils, Camera, Trophy } from 'lucide-react';
+import { MapPin, Maximize, Users, BookOpen, Utensils, Camera, Trophy, Image as ImageIcon, TrendingUp, CloudSun, Volume2, VolumeX } from 'lucide-react';
 import { Province, Attraction } from '../data/provinces';
 import AttractionModal from './AttractionModal';
+import AttractionCard from './AttractionCard';
 
 interface ProvinceInfoProps {
   province: Province;
@@ -12,17 +13,96 @@ interface ProvinceInfoProps {
 export default function ProvinceInfo({ province, userLoc, onStartGameshow }: ProvinceInfoProps) {
   const [expanded, setExpanded] = useState(false);
   const [selectedAttraction, setSelectedAttraction] = useState<Attraction | null>(null);
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
   // Reset state when province changes
   useEffect(() => {
     setExpanded(false);
     setSelectedAttraction(null);
+    stopSpeaking();
   }, [province.name]);
+
+  // Cleanup speech synthesis on unmount
+  useEffect(() => {
+    // Kích hoạt tải danh sách giọng đọc ngay khi component mount (để tránh lỗi mảng rỗng ở lần click đầu tiên trên Chrome)
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.getVoices();
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+      };
+    }
+
+    return () => {
+      stopSpeaking();
+    };
+  }, []);
+
+  const stopSpeaking = () => {
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+    }
+  };
+
+  const toggleSpeech = () => {
+    if (!('speechSynthesis' in window)) {
+      alert('Trình duyệt của bạn không hỗ trợ tính năng đọc văn bản.');
+      return;
+    }
+
+    if (isSpeaking) {
+      stopSpeaking();
+    } else {
+      const textToRead = `
+        Tỉnh ${province.name}. 
+        Vị trí: ${province.location}. 
+        Diện tích: ${province.area}. 
+        Dân số: ${province.population}. 
+        ${province.description}
+      `;
+      const utterance = new SpeechSynthesisUtterance(textToRead);
+      utterance.lang = 'vi-VN'; // Set language to Vietnamese
+      utterance.rate = 0.9; // Slightly slower for better comprehension
+      
+      // Tìm và thiết lập giọng đọc tiếng Việt một cách tường minh
+      const voices = window.speechSynthesis.getVoices();
+      const viVoice = voices.find(voice => 
+        voice.lang === 'vi-VN' || 
+        voice.lang === 'vi_VN' || 
+        voice.lang === 'vi' || 
+        voice.name.toLowerCase().includes('vietnamese') ||
+        voice.name.toLowerCase().includes('tiếng việt')
+      );
+      
+      if (viVoice) {
+        utterance.voice = viVoice;
+      } else {
+        console.warn("Không tìm thấy giọng tiếng Việt trên thiết bị này. Sẽ sử dụng giọng mặc định của hệ thống.");
+        // Nếu không tìm thấy, hệ thống sẽ cố gắng dùng lang='vi-VN' đã set ở trên.
+        // Tuy nhiên nếu hệ điều hành không cài đặt gói ngôn ngữ tiếng Việt, nó có thể vẫn đọc bằng tiếng Anh.
+      }
+      
+      utterance.onend = () => setIsSpeaking(false);
+      utterance.onerror = () => setIsSpeaking(false);
+
+      window.speechSynthesis.speak(utterance);
+      setIsSpeaking(true);
+    }
+  };
 
   return (
     <div className="p-6 lg:p-10 h-full overflow-y-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 className="text-4xl font-bold text-slate-800">{province.name}</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-4xl font-bold text-slate-800">{province.name}</h1>
+          <button 
+            onClick={toggleSpeech}
+            className={`p-2 rounded-full transition-colors ${isSpeaking ? 'bg-blue-100 text-blue-600 animate-pulse' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
+            title={isSpeaking ? "Dừng đọc" : "Nghe thông tin"}
+          >
+            {isSpeaking ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+          </button>
+        </div>
         <button
           onClick={onStartGameshow}
           className="flex items-center justify-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded-xl hover:bg-amber-200 transition-colors border border-amber-300"
@@ -30,6 +110,19 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
           <Trophy className="w-5 h-5" />
           Gameshow {province.name}
         </button>
+      </div>
+
+      {/* Hero Image */}
+      <div className="w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-6 relative shadow-md">
+        <img 
+          src={province.image || `https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop`} 
+          alt={`Phong cảnh ${province.name}`} 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-4">
+          <span className="text-white font-medium text-lg">Khám phá vẻ đẹp {province.name}</span>
+        </div>
       </div>
       
       <p className="text-lg text-slate-600 mb-8 leading-relaxed">{province.description}</p>
@@ -78,17 +171,43 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
 
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+              <TrendingUp className="text-purple-500" /> Kinh tế
+            </h2>
+            <p className="text-slate-700 leading-relaxed bg-purple-50/50 p-5 rounded-2xl border border-purple-100">
+              {province.economy}
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
+              <CloudSun className="text-sky-500" /> Khí hậu
+            </h2>
+            <p className="text-slate-700 leading-relaxed bg-sky-50/50 p-5 rounded-2xl border border-sky-100">
+              {province.climate}
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <Utensils className="text-orange-500" /> Ẩm thực đặc trưng
             </h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {province.food.length > 0 ? (
                 province.food.map((f, i) => (
-                  <span key={i} className="px-4 py-2 bg-orange-100 text-orange-800 font-medium rounded-full text-sm border border-orange-200">
-                    {f}
-                  </span>
+                  <div key={i} className="group relative overflow-hidden rounded-2xl aspect-square shadow-sm border border-orange-100">
+                    <img 
+                      src={f.image} 
+                      alt={f.name} 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                      referrerPolicy="no-referrer" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-orange-900/90 via-orange-900/30 to-transparent flex items-end p-3">
+                      <span className="text-white font-bold text-sm drop-shadow-md">{f.name}</span>
+                    </div>
+                  </div>
                 ))
               ) : (
-                <p className="text-slate-500 italic">Đang cập nhật dữ liệu ẩm thực.</p>
+                <p className="text-slate-500 italic col-span-full">Đang cập nhật dữ liệu ẩm thực.</p>
               )}
             </div>
           </section>
@@ -97,20 +216,17 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <Camera className="text-emerald-500" /> Địa điểm du lịch
             </h2>
-            <div className="grid gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {province.attractions.length > 0 ? (
                 province.attractions.map((attr, i) => (
-                  <div
+                  <AttractionCard
                     key={i}
+                    attraction={attr}
                     onClick={() => setSelectedAttraction(attr)}
-                    className="p-5 bg-white border border-slate-200 rounded-2xl hover:border-emerald-400 hover:shadow-md cursor-pointer transition-all group"
-                  >
-                    <h3 className="font-bold text-lg text-slate-800 group-hover:text-emerald-600 transition-colors">{attr.name}</h3>
-                    <p className="text-sm text-slate-500 mt-2 line-clamp-2">{attr.highlights}</p>
-                  </div>
+                  />
                 ))
               ) : (
-                <p className="text-slate-500 italic">Đang cập nhật địa điểm du lịch.</p>
+                <p className="text-slate-500 italic col-span-full">Đang cập nhật địa điểm du lịch.</p>
               )}
             </div>
           </section>
