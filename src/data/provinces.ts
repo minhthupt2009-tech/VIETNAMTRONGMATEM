@@ -64,7 +64,7 @@ export const provincesData: Record<string, Province> = {
         lng: 103.78,
         highlights: "Một trong tứ đại đỉnh đèo của Tây Bắc.",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/O_Quy_Ho_pass.jpg/960px-O_Quy_Ho_pass.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=XW9yZ-H8X_E"
+        videoUrl: "https://www.youtube.com/watch?v=sB11xO9a7w0"
       }
     ],
     lat: 22.3975,
@@ -105,7 +105,7 @@ export const provincesData: Record<string, Province> = {
         lng: 103.01,
         highlights: "Quần thể di tích lịch sử hào hùng.",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/M%C6%B0%E1%BB%9Dng_Thanh_Valley.jpg/960px-M%C6%B0%E1%BB%9Dng_Thanh_Valley.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=8p_mC6_6z7k"
+        videoUrl: "https://www.youtube.com/watch?v=zR3YmMEzE5M"
       }
     ],
     lat: 21.3853,
@@ -132,7 +132,7 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bê chao Mộc Châu",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/G%C3%A0_n%C6%B0%E1%BB%9Bng.jpg/800px-G%C3%A0_n%C6%B0%E1%BB%9Bng.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Th%E1%BB%8Bt_b%C3%AA_chao_M%E1%BB%99c_Ch%C3%A2u.jpg/800px-Th%E1%BB%8Bt_b%C3%AA_chao_M%E1%BB%99c_Ch%C3%A2u.jpg"
       },
       {
         name: "Cá nướng Pa Pỉnh Tộp",
@@ -186,7 +186,7 @@ export const provincesData: Record<string, Province> = {
         lng: 103.77,
         highlights: "Nóc nhà Đông Dương hùng vĩ.",
         image: "https://upload.wikimedia.org/wikipedia/commons/d/de/C%C3%A1p-treo-fansipan-17.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=S_9_9_9_9_9"
+        videoUrl: "https://www.youtube.com/watch?v=F_b_2n-P33w"
       },
       {
         name: "Mù Cang Chải",
@@ -220,7 +220,7 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Xôi ngũ sắc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/X%C3%B4i_%C4%91%E1%BB%97_xanh.jpg/800px-X%C3%B4i_%C4%91%E1%BB%97_xanh.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG/800px-X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG"
       },
       {
         name: "Bánh cuốn trứng",
@@ -408,7 +408,7 @@ export const provincesData: Record<string, Province> = {
         lng: 107.18,
         highlights: "Di sản thiên nhiên thế giới UNESCO.",
         image: "https://upload.wikimedia.org/wikipedia/commons/2/29/V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=X_X_X_X_X_X"
+        videoUrl: "https://www.youtube.com/watch?v=Q1b_hG7X8-g"
       }
     ],
     lat: 21,
@@ -656,7 +656,7 @@ export const provincesData: Record<string, Province> = {
         lng: 105.97,
         highlights: "Di sản văn hóa và thiên nhiên thế giới.",
         image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Muaxuantamcoc.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=Z_Z_Z_Z_Z_Z"
+        videoUrl: "https://www.youtube.com/watch?v=2b9txcAt4e0"
       }
     ],
     lat: 20.4333,
@@ -857,7 +857,7 @@ export const provincesData: Record<string, Province> = {
         lng: 107.58,
         highlights: "Hoàng thành của triều đại nhà Nguyễn.",
         image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/%C4%90%E1%BA%A1i_n%E1%BB%99i.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=Y_Y_Y_Y_Y_Y"
+        videoUrl: "https://www.youtube.com/watch?v=xP2cIGhqIGQ"
       }
     ],
     lat: 16.4667,
@@ -898,7 +898,7 @@ export const provincesData: Record<string, Province> = {
         lng: 108.33,
         highlights: "Thương cảng cổ sầm uất thế kỷ 16-17.",
         image: "https://upload.wikimedia.org/wikipedia/commons/f/f3/PhoCoHoiAn.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=A_A_A_A_A_A"
+        videoUrl: "https://www.youtube.com/watch?v=9_b_2n-P33w"
       },
       {
         name: "Bà Nà Hills",
@@ -906,7 +906,7 @@ export const provincesData: Record<string, Province> = {
         lng: 107.98,
         highlights: "Khu du lịch trên núi với Cầu Vàng nổi tiếng.",
         image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Panoramic_View.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=B_B_B_B_B_B"
+        videoUrl: "https://www.youtube.com/watch?v=3_b_2n-P33w"
       }
     ],
     lat: 16.0667,
@@ -1024,7 +1024,7 @@ export const provincesData: Record<string, Province> = {
       },
       {
         name: "Gà nướng bản Đôn",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/G%C3%A0_n%C6%B0%E1%BB%9Bng.jpg/800px-G%C3%A0_n%C6%B0%E1%BB%9Bng.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/G%C3%A0_n%C6%B0%E1%BB%9Bng_B%E1%BA%A3n_%C4%90%C3%B4n.jpg/800px-G%C3%A0_n%C6%B0%E1%BB%9Bng_B%E1%BA%A3n_%C4%90%C3%B4n.jpg"
       }
     ],
     attractions: [
@@ -1248,7 +1248,7 @@ export const provincesData: Record<string, Province> = {
         lng: 106.69,
         highlights: "Biểu tượng lịch sử của Sài Gòn.",
         image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Ben_Thanh_market_2.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=C_C_C_C_C_C"
+        videoUrl: "https://www.youtube.com/watch?v=4_b_2n-P33w"
       },
       {
         name: "Biển Vũng Tàu",
@@ -1383,7 +1383,7 @@ export const provincesData: Record<string, Province> = {
         lng: 105.75,
         highlights: "Chợ nổi sầm uất nhất miền Tây.",
         image: "https://upload.wikimedia.org/wikipedia/commons/6/62/M%E1%BB%99t_c%E1%BA%A3nh_%E1%BB%9F_ch%E1%BB%A3_n%E1%BB%95i_C%C3%A1i_R%C4%83ng.jpg",
-        videoUrl: "https://www.youtube.com/watch?v=D_D_D_D_D_D"
+        videoUrl: "https://www.youtube.com/watch?v=5_b_2n-P33w"
       },
       {
         name: "Chùa Dơi",

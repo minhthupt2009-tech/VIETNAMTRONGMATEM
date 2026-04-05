@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { X, Navigation, MapPinOff, Loader2, Sparkles, Key } from 'lucide-react';
+import { X, Navigation, MapPinOff, Loader2, Sparkles, Key, Map } from 'lucide-react';
 import { Attraction } from '../data/provinces';
 import { calculateDistance } from '../utils/distance';
 import { GoogleGenAI } from '@google/genai';
+import Markdown from 'react-markdown';
 
 declare global {
   interface Window {
@@ -20,8 +21,8 @@ interface AttractionModalProps {
 }
 
 export default function AttractionModal({ attraction, userLoc, onClose }: AttractionModalProps) {
-  const [isGeneratingVideo, setIsGeneratingVideo] = useState(false);
-  const [generatedVideoUrl, setGeneratedVideoUrl] = useState<string | null>(null);
+  const [isGeneratingItinerary, setIsGeneratingItinerary] = useState(false);
+  const [generatedItinerary, setGeneratedItinerary] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const distance = userLoc ? calculateDistance(userLoc.lat, userLoc.lng, attraction.lat, attraction.lng) : null;
@@ -36,65 +37,35 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
     return url;
   };
 
-  const handleGenerateVideo = async () => {
-    setIsGeneratingVideo(true);
+  const handleGenerateItinerary = async () => {
+    setIsGeneratingItinerary(true);
     setError(null);
     try {
-      // Check if API key is selected for Veo models
-      const hasKey = await window.aistudio.hasSelectedApiKey();
-      if (!hasKey) {
-        await window.aistudio.openSelectKey();
-        // After opening, we assume success or user will try again
-      }
-
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-      let operation;
+      const apiKey = (import.meta.env.VITE_GEMINI_API_KEY as string) || (process.env.GEMINI_API_KEY as string);
       
-      try {
-        operation = await ai.models.generateVideos({
-          model: 'veo-3.1-lite-generate-preview',
-          prompt: `A cinematic travel video of ${attraction.name}, Vietnam. High quality, scenic views, smooth camera movement.`,
-          config: {
-            numberOfVideos: 1,
-            resolution: '720p',
-            aspectRatio: '16:9'
-          }
-        });
-      } catch (err: any) {
-        if (err?.message?.includes('Requested entity was not found')) {
-          setError("Vui lòng chọn lại API Key có hỗ trợ Video.");
-          await window.aistudio.openSelectKey();
-          return;
-        }
-        throw err;
+      if (!apiKey) {
+        setError("Thiếu API Key. Vui lòng thiết lập VITE_GEMINI_API_KEY trong file .env");
+        setIsGeneratingItinerary(false);
+        return;
       }
 
-      while (!operation.done) {
-        await new Promise(resolve => setTimeout(resolve, 5000));
-        operation = await ai.operations.getVideosOperation({ operation: operation });
-      }
+      const ai = new GoogleGenAI({ apiKey });
+      
+      const response = await ai.models.generateContent({
+        model: 'gemini-3-flash-preview',
+        contents: `Đóng vai là một hướng dẫn viên du lịch địa phương, hãy tạo một lịch trình tham quan chi tiết trong 1 ngày tại địa điểm "${attraction.name}" (Việt Nam). Lịch trình cần bao gồm thời gian cụ thể, các hoạt động trải nghiệm, và gợi ý ăn uống. Trình bày bằng tiếng Việt, định dạng Markdown rõ ràng, thân thiện và hấp dẫn.`,
+      });
 
-      const downloadLink = operation.response?.generatedVideos?.[0]?.video?.uri;
-      if (downloadLink) {
-        const response = await fetch(downloadLink, {
-          method: 'GET',
-          headers: {
-            'x-goog-api-key': process.env.GEMINI_API_KEY || '',
-          },
-        });
-        const blob = await response.blob();
-        const url = URL.createObjectURL(blob);
-        setGeneratedVideoUrl(url);
+      if (response.text) {
+        setGeneratedItinerary(response.text);
+      } else {
+        setError("Không thể tạo lịch trình lúc này. Vui lòng thử lại sau.");
       }
     } catch (err: any) {
-      console.error("Error generating video:", err);
-      if (err?.message?.includes('permission') || err?.message?.includes('403')) {
-        setError("Bạn chưa có quyền tạo video. Vui lòng thiết lập API Key trả phí.");
-      } else {
-        setError("Không thể tạo video lúc này. Vui lòng thử lại sau.");
-      }
+      console.error("Error generating itinerary:", err);
+      setError("Có lỗi xảy ra khi gọi AI. Vui lòng kiểm tra lại API Key hoặc kết nối mạng.");
     } finally {
-      setIsGeneratingVideo(false);
+      setIsGeneratingItinerary(false);
     }
   };
 
@@ -102,23 +73,14 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
     <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-200">
       <div className="bg-white rounded-3xl max-w-2xl w-full relative shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col max-h-[95vh]">
         <div className="relative h-48 sm:h-80 shrink-0">
-          {attraction.videoUrl || generatedVideoUrl ? (
+          {attraction.videoUrl ? (
             <div className="w-full h-full">
-              {attraction.videoUrl ? (
-                <iframe
-                  src={getEmbedUrl(attraction.videoUrl)}
-                  className="w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <video
-                  src={generatedVideoUrl!}
-                  className="w-full h-full object-cover"
-                  controls
-                  autoPlay
-                ></video>
-              )}
+              <iframe
+                src={getEmbedUrl(attraction.videoUrl)}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           ) : (
             <>
@@ -139,13 +101,13 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
             <X className="w-5 h-5" />
           </button>
           
-          {!attraction.videoUrl && !generatedVideoUrl && (
+          {!attraction.videoUrl && (
             <h2 className="absolute bottom-4 left-6 right-6 text-3xl font-bold text-white drop-shadow-md">{attraction.name}</h2>
           )}
         </div>
         
         <div className="p-6 sm:p-8 overflow-y-auto">
-          {(attraction.videoUrl || generatedVideoUrl) && (
+          {attraction.videoUrl && (
             <h2 className="text-2xl font-bold text-slate-800 mb-4">{attraction.name}</h2>
           )}
 
@@ -162,21 +124,21 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
               </div>
             )}
 
-            {!attraction.videoUrl && !generatedVideoUrl && (
+            {!generatedItinerary && (
               <button
-                onClick={handleGenerateVideo}
-                disabled={isGeneratingVideo}
+                onClick={handleGenerateItinerary}
+                disabled={isGeneratingItinerary}
                 className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-xl transition-colors disabled:opacity-50 shadow-md shadow-emerald-200"
               >
-                {isGeneratingVideo ? (
+                {isGeneratingItinerary ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span className="text-sm font-medium">Đang tạo video AI...</span>
+                    <span className="text-sm font-medium">Đang tạo lịch trình AI...</span>
                   </>
                 ) : (
                   <>
-                    <Sparkles className="w-4 h-4" />
-                    <span className="text-sm font-medium">Tạo video bằng AI</span>
+                    <Map className="w-4 h-4" />
+                    <span className="text-sm font-medium">Tạo lịch trình tham quan AI</span>
                   </>
                 )}
               </button>
@@ -189,30 +151,21 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
                 <span className="shrink-0">⚠️</span>
                 <p>{error}</p>
               </div>
-              {error.includes("API Key") || error.includes("quyền") ? (
-                <div className="flex flex-col gap-2">
-                  <button
-                    onClick={() => window.aistudio.openSelectKey()}
-                    className="flex items-center justify-center gap-2 bg-slate-800 text-white px-4 py-2 rounded-lg hover:bg-slate-900 transition-colors w-fit text-xs font-medium"
-                  >
-                    <Key className="w-3 h-3" />
-                    Chọn API Key
-                  </button>
-                  <a 
-                    href="https://ai.google.dev/gemini-api/docs/billing" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline text-[10px]"
-                  >
-                    Tìm hiểu về thanh toán và API Key trả phí
-                  </a>
-                </div>
-              ) : null}
             </div>
           )}
 
-          <div className="prose prose-slate prose-lg">
-            <p className="text-slate-600 leading-relaxed">{attraction.description || attraction.highlights}</p>
+          <div className="prose prose-slate prose-lg max-w-none">
+            {generatedItinerary ? (
+              <div className="bg-emerald-50/50 border border-emerald-100 p-6 rounded-2xl markdown-body prose-emerald">
+                <h3 className="text-emerald-800 flex items-center gap-2 mt-0">
+                  <Sparkles className="w-5 h-5 text-emerald-600" />
+                  Lịch trình gợi ý bởi AI
+                </h3>
+                <Markdown>{generatedItinerary}</Markdown>
+              </div>
+            ) : (
+              <p className="text-slate-600 leading-relaxed">{attraction.description || attraction.highlights}</p>
+            )}
           </div>
         </div>
       </div>
