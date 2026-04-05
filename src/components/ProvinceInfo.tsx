@@ -53,40 +53,61 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
     if (isSpeaking) {
       stopSpeaking();
     } else {
+      const cultureText = province.culture.join('. ');
+      const economyText = province.economy.join('. ');
+      
       const textToRead = `
         Tỉnh ${province.name}. 
         Vị trí: ${province.location}. 
         Diện tích: ${province.area}. 
         Dân số: ${province.population}. 
-        ${province.description}
+        Mô tả: ${province.description}.
+        Về văn hóa: ${cultureText}.
+        Về kinh tế: ${economyText}.
+        Khí hậu: ${province.climate}.
       `;
+      
       const utterance = new SpeechSynthesisUtterance(textToRead);
-      utterance.lang = 'vi-VN'; // Set language to Vietnamese
-      utterance.rate = 0.9; // Slightly slower for better comprehension
+      utterance.lang = 'vi-VN';
+      utterance.rate = 0.95; // Tăng tốc độ một chút cho tự nhiên hơn
+      utterance.pitch = 1;
       
-      // Tìm và thiết lập giọng đọc tiếng Việt một cách tường minh
-      const voices = window.speechSynthesis.getVoices();
-      const viVoice = voices.find(voice => 
-        voice.lang === 'vi-VN' || 
-        voice.lang === 'vi_VN' || 
-        voice.lang === 'vi' || 
-        voice.name.toLowerCase().includes('vietnamese') ||
-        voice.name.toLowerCase().includes('tiếng việt')
-      );
-      
+      // Hàm tìm giọng đọc tiếng Việt tối ưu
+      const getViVoice = () => {
+        const voices = window.speechSynthesis.getVoices();
+        // Ưu tiên các giọng có lang vi-VN
+        let viVoice = voices.find(v => v.lang === 'vi-VN' || v.lang === 'vi_VN');
+        
+        if (!viVoice) {
+          // Tìm theo tên
+          viVoice = voices.find(v => 
+            v.name.toLowerCase().includes('vietnamese') ||
+            v.name.toLowerCase().includes('tiếng việt') ||
+            v.name.toLowerCase().includes('huyen') ||
+            v.name.toLowerCase().includes('an') ||
+            v.name.toLowerCase().includes('linh')
+          );
+        }
+        
+        return viVoice;
+      };
+
+      const viVoice = getViVoice();
       if (viVoice) {
         utterance.voice = viVoice;
       } else {
-        console.warn("Không tìm thấy giọng tiếng Việt trên thiết bị này. Sẽ sử dụng giọng mặc định của hệ thống.");
-        // Nếu không tìm thấy, hệ thống sẽ cố gắng dùng lang='vi-VN' đã set ở trên.
-        // Tuy nhiên nếu hệ điều hành không cài đặt gói ngôn ngữ tiếng Việt, nó có thể vẫn đọc bằng tiếng Anh.
+        console.warn('Không tìm thấy giọng đọc tiếng Việt, sử dụng giọng mặc định.');
+        // Nếu không có giọng Việt, vẫn để lang là vi-VN để trình duyệt cố gắng giả lập hoặc dùng giọng phù hợp nhất
       }
       
+      utterance.onstart = () => setIsSpeaking(true);
       utterance.onend = () => setIsSpeaking(false);
-      utterance.onerror = () => setIsSpeaking(false);
+      utterance.onerror = (event) => {
+        console.error('SpeechSynthesis error:', event);
+        setIsSpeaking(false);
+      };
 
       window.speechSynthesis.speak(utterance);
-      setIsSpeaking(true);
     }
   };
 
@@ -164,18 +185,28 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <BookOpen className="text-blue-500" /> Văn hóa
             </h2>
-            <p className="text-slate-700 leading-relaxed bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
-              {province.culture}
-            </p>
+            <div className="space-y-2 bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+              {province.culture.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2.5 shrink-0" />
+                  <p className="text-slate-700 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <TrendingUp className="text-purple-500" /> Kinh tế
             </h2>
-            <p className="text-slate-700 leading-relaxed bg-purple-50/50 p-5 rounded-2xl border border-purple-100">
-              {province.economy}
-            </p>
+            <div className="space-y-2 bg-purple-50/50 p-5 rounded-2xl border border-purple-100">
+              {province.economy.map((item, idx) => (
+                <div key={idx} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2.5 shrink-0" />
+                  <p className="text-slate-700 leading-relaxed">{item}</p>
+                </div>
+              ))}
+            </div>
           </section>
 
           <section>

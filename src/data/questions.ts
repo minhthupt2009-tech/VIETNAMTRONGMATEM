@@ -353,18 +353,19 @@ export const getProvinceQuestions = (province: Province, count: number = 5): Gam
   });
 
   // 11. Culture
-  if (province.culture) {
+  if (province.culture && province.culture.length > 0) {
+    const culturePoint = province.culture[0];
     questions.push({
       id: `p_q11_${province.name}`,
       type: 'MULTIPLE_CHOICE',
       question: `Đặc điểm văn hóa nào sau đây gắn liền với ${province.name}?`,
       options: [
-        province.culture.length > 80 ? province.culture.substring(0, 80) + '...' : province.culture,
+        culturePoint.length > 80 ? culturePoint.substring(0, 80) + '...' : culturePoint,
         "Văn hóa cồng chiêng Tây Nguyên",
         "Nhã nhạc cung đình Huế",
         "Đờn ca tài tử Nam Bộ"
       ].filter((v, i, a) => a.indexOf(v) === i).sort(() => 0.5 - Math.random()).slice(0, 4),
-      correctAnswer: province.culture.length > 80 ? province.culture.substring(0, 80) + '...' : province.culture
+      correctAnswer: culturePoint.length > 80 ? culturePoint.substring(0, 80) + '...' : culturePoint
     });
   }
 
