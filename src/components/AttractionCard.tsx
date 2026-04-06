@@ -25,7 +25,7 @@ export default function AttractionCard({ attraction, onClick }: AttractionCardPr
     e.stopPropagation();
     setIsGeneratingDesc(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: `Viết một đoạn mô tả chi tiết, hấp dẫn về địa điểm du lịch "${attraction.name}" (khoảng 3-4 câu).`,
@@ -46,7 +46,7 @@ export default function AttractionCard({ attraction, onClick }: AttractionCardPr
     e.stopPropagation();
     setIsGeneratingImage(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash-image',
         contents: {
