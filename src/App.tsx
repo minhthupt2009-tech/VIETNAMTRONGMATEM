@@ -89,6 +89,12 @@ export default function App() {
           <span className="hidden sm:inline">Gameshow Tổng Quát</span>
         </button>
 
+        {/* Application Info & Author (Bottom Right) */}
+        <div className="absolute bottom-6 right-6 z-20 bg-white/90 backdrop-blur px-4 py-2 rounded-xl shadow-md text-sm text-slate-600 pointer-events-none max-w-[280px] text-right border border-slate-200">
+          <p className="font-medium text-blue-600 leading-tight">Ứng dụng bản đồ số tương tác "Việt Nam trong tầm tay" tích hợp trí tuệ nhân tạo hỗ trợ học tập Địa lý</p>
+          <p className="text-xs font-bold text-slate-500 mt-1 uppercase tracking-wider">TÁC GIẢ: Hồ Minh Tỷ</p>
+        </div>
+
         <VietnamMap 
           onSelectProvince={handleProvinceClick} 
           onHoverProvince={handleProvinceHover}

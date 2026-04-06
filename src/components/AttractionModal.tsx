@@ -41,7 +41,7 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
     setIsGeneratingItinerary(true);
     setError(null);
     try {
-      const apiKey = (import.meta.env.VITE_GEMINI_API_KEY as string) || (process.env.GEMINI_API_KEY as string);
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       
       if (!apiKey) {
         setError("Thiếu API Key. Vui lòng thiết lập VITE_GEMINI_API_KEY trong file .env");
@@ -70,9 +70,13 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-in fade-in duration-200">
-      <div className="bg-white rounded-3xl max-w-2xl w-full relative shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col max-h-[95vh]">
-        <div className="relative h-48 sm:h-80 shrink-0">
+    <div className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center z-50 sm:p-4 animate-in fade-in duration-200">
+      <div className={`bg-white w-full relative shadow-2xl animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col ${
+        generatedItinerary 
+          ? 'h-[100dvh] sm:h-[95vh] max-w-5xl rounded-none sm:rounded-3xl' 
+          : 'max-h-[100dvh] sm:max-h-[95vh] max-w-4xl rounded-none sm:rounded-3xl'
+      }`}>
+        <div className={`relative shrink-0 transition-all duration-500 ${generatedItinerary ? 'h-32 sm:h-64' : 'h-48 sm:h-80'}`}>
           {attraction.videoUrl ? (
             <div className="w-full h-full">
               <iframe
@@ -106,7 +110,7 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
           )}
         </div>
         
-        <div className="p-6 sm:p-8 overflow-y-auto">
+        <div className="p-4 sm:p-8 overflow-y-auto flex-1">
           {attraction.videoUrl && (
             <h2 className="text-2xl font-bold text-slate-800 mb-4">{attraction.name}</h2>
           )}
@@ -156,8 +160,8 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
 
           <div className="prose prose-slate prose-lg max-w-none">
             {generatedItinerary ? (
-              <div className="bg-emerald-50/50 border border-emerald-100 p-6 rounded-2xl markdown-body prose-emerald">
-                <h3 className="text-emerald-800 flex items-center gap-2 mt-0">
+              <div className="bg-emerald-50/50 border border-emerald-100 p-4 sm:p-6 rounded-2xl markdown-body prose-emerald">
+                <h3 className="text-emerald-800 flex items-center gap-2 mt-0 text-xl sm:text-2xl">
                   <Sparkles className="w-5 h-5 text-emerald-600" />
                   Lịch trình gợi ý bởi AI
                 </h3>

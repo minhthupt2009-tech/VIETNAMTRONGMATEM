@@ -50,11 +50,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Lợn cắp nách",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sapa-pig.jpg/800px-Sapa-pig.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sapa-pig.jpg/960px-Sapa-pig.jpg"
       },
       {
         name: "Xôi tím",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/X%C3%B4i_%C4%91%E1%BB%97_xanh.jpg/800px-X%C3%B4i_%C4%91%E1%BB%97_xanh.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/X%C3%B4i_%C4%91%E1%BB%97_xanh.jpg/960px-X%C3%B4i_%C4%91%E1%BB%97_xanh.jpg"
       }
     ],
     attractions: [
@@ -69,7 +69,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 22.3975,
     lng: 103.45,
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Laichautown.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/O_Quy_Ho_pass.jpg/960px-O_Quy_Ho_pass.jpg"
   },
   "Điện Biên": {
     name: "Điện Biên",
@@ -91,11 +91,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Gà nướng mắc khén",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/G%C3%A0_n%C6%B0%E1%BB%9Bng.jpg/800px-G%C3%A0_n%C6%B0%E1%BB%9Bng.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/G%C3%A0_n%C6%B0%E1%BB%9Bng_m%E1%BA%AFc_kh%C3%A9n.jpg/800px-G%C3%A0_n%C6%B0%E1%BB%9Bng_m%E1%BA%AFc_kh%C3%A9n.jpg"
       },
       {
         name: "Thịt trâu gác bếp",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_T%C3%A2y_B%E1%BA%AFc%2C_th%E1%BB%8Bt_tr%C3%A2u_g%C3%A1c_b%E1%BA%BFp_m%E1%BA%AFc_kh%C3%A9n_%284%29.jpg/800px-L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_T%C3%A2y_B%E1%BA%AFc%2C_th%E1%BB%8Bt_tr%C3%A2u_g%C3%A1c_b%E1%BA%BFp_m%E1%BA%AFc_kh%C3%A9n_%284%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_T%C3%A2y_B%E1%BA%AFc%2C_th%E1%BB%8Bt_tr%C3%A2u_g%C3%A1c_b%E1%BA%BFp_m%E1%BA%AFc_kh%C3%A9n_%284%29.jpg/960px-L%E1%BB%85_h%E1%BB%99i_%E1%BA%A9m_th%E1%BB%B1c_C%E1%BB%ADa_Vi%E1%BB%87t_th4n2023_%C4%91%E1%BA%B7c_s%E1%BA%A3n_T%C3%A2y_B%E1%BA%AFc%2C_th%E1%BB%8Bt_tr%C3%A2u_g%C3%A1c_b%E1%BA%BFp_m%E1%BA%AFc_kh%C3%A9n_%284%29.jpg"
       }
     ],
     attractions: [
@@ -110,7 +110,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 21.3853,
     lng: 103.0181,
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e8/M%C6%B0%E1%BB%9Dng_Thanh_Valley.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/M%C6%B0%E1%BB%9Dng_Thanh_Valley.jpg/960px-M%C6%B0%E1%BB%9Dng_Thanh_Valley.jpg"
   },
   "Sơn La": {
     name: "Sơn La",
@@ -132,11 +132,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bê chao Mộc Châu",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Th%E1%BB%8Bt_b%C3%AA_chao_M%E1%BB%99c_Ch%C3%A2u.jpg/800px-Th%E1%BB%8Bt_b%C3%AA_chao_M%E1%BB%99c_Ch%C3%A2u.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg/960px-S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg"
       },
       {
         name: "Cá nướng Pa Pỉnh Tộp",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Khu_%E1%BA%A9m_th%E1%BB%B1c_B%E1%BA%BFn_Ngh%C3%A9_ng13th8n2023_%28c%C3%A1_n%C6%B0%E1%BB%9Bng_T%C3%A2y_B%E1%BA%AFc_Pa_t%E1%BB%89nh_t%E1%BB%99p%29_%287%29.jpg/800px-Khu_%E1%BA%A9m_th%E1%BB%B1c_B%E1%BA%BFn_Ngh%C3%A9_ng13th8n2023_%28c%C3%A1_n%C6%B0%E1%BB%9Bng_T%C3%A2y_B%E1%BA%AFc_Pa_t%E1%BB%89nh_t%E1%BB%99p%29_%287%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Khu_%E1%BA%A9m_th%E1%BB%B1c_B%E1%BA%BFn_Ngh%C3%A9_ng13th8n2023_%28c%C3%A1_n%C6%B0%E1%BB%9Bng_T%C3%A2y_B%E1%BA%AFc_Pa_t%E1%BB%89nh_t%E1%BB%99p%29_%287%29.jpg/960px-Khu_%E1%BA%A9m_th%E1%BB%B1c_B%E1%BA%BFn_Ngh%C3%A9_ng13th8n2023_%28c%C3%A1_n%C6%B0%E1%BB%9Bng_T%C3%A2y_B%E1%BA%AFc_Pa_t%E1%BB%89nh_t%E1%BB%99p%29_%287%29.jpg"
       }
     ],
     attractions: [
@@ -145,12 +145,12 @@ export const provincesData: Record<string, Province> = {
         lat: 20.85,
         lng: 104.63,
         highlights: "Những đồi chè xanh mướt trải dài vô tận.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Moc_Chau_tea_hill.jpg/800px-Moc_Chau_tea_hill.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg/960px-S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg"
       }
     ],
     lat: 21.328,
     lng: 103.897,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vietnam_location_map.svg/800px-Vietnam_location_map.svg.png"
   },
   "Lào Cai - Yên Bái": {
     name: "Lào Cai (Lào Cai + Yên Bái)",
@@ -172,11 +172,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Thắng cố",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Th%E1%BA%AFng_c%E1%BB%91.jpg/800px-Th%E1%BA%AFng_c%E1%BB%91.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Th%E1%BA%AFng_c%E1%BB%91.jpg/960px-Th%E1%BA%AFng_c%E1%BB%91.jpg"
       },
       {
         name: "Xôi ngũ sắc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG/800px-X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg/960px-S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg"
       }
     ],
     attractions: [
@@ -198,7 +198,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 22.4833,
     lng: 103.9667,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Fansipan_summit_2_in_sunrise.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Mu_Cang_Chai_01.JPG/960px-Mu_Cang_Chai_01.JPG"
   },
   "Hà Giang - Tuyên Quang": {
     name: "Hà Giang (Hà Giang + Tuyên Quang)",
@@ -220,11 +220,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Xôi ngũ sắc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG/800px-X%C3%B4i_ng%C5%A9_s%E1%BA%AFc.JPG"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg/960px-S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg"
       },
       {
         name: "Bánh cuốn trứng",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Banh_cuon.jpg/800px-Banh_cuon.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Banh_cuon.jpg/960px-Banh_cuon.jpg"
       }
     ],
     attractions: [
@@ -233,7 +233,7 @@ export const provincesData: Record<string, Province> = {
         lat: 23.36,
         lng: 105.31,
         highlights: "Điểm cực Bắc thiêng liêng của Tổ quốc.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/20/C%E1%BB%99t_c%E1%BB%9D_L%C5%A9ng_C%C3%BA.JPG"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/C%E1%BB%99t_c%E1%BB%9D_L%C5%A9ng_C%C3%BA.JPG/960px-C%E1%BB%99t_c%E1%BB%9D_L%C5%A9ng_C%C3%BA.JPG"
       },
       {
         name: "Mã Pì Lèng",
@@ -245,7 +245,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 22.8233,
     lng: 104.9833,
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/C%E1%BB%99t_c%E1%BB%9D_L%C5%A9ng_C%C3%BA.JPG"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/%C4%90%C3%A8o_M%C3%A3_P%C3%AD_L%C3%A8ng_2022.jpg/960px-%C4%90%C3%A8o_M%C3%A3_P%C3%AD_L%C3%A8ng_2022.jpg"
   },
   "Cao Bằng": {
     name: "Cao Bằng",
@@ -267,11 +267,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Vịt quay 7 vị",
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Shaoruzhu.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Roasted_Beijing_Duck_sliced.jpg/960px-Roasted_Beijing_Duck_sliced.jpg"
       },
       {
         name: "Hạt dẻ Trùng Khánh",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Roasted_chestnuts.jpg/800px-Roasted_chestnuts.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Th%C3%A1c_B%E1%BA%A3n_Gi%E1%BB%91c.jpg/960px-Th%C3%A1c_B%E1%BA%A3n_Gi%E1%BB%91c.jpg"
       }
     ],
     attractions: [
@@ -280,12 +280,12 @@ export const provincesData: Record<string, Province> = {
         lat: 22.85,
         lng: 106.72,
         highlights: "Thác nước tự nhiên lớn nhất Đông Nam Á.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bangioc9tam.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Bangioc9tam.jpg/960px-Bangioc9tam.jpg"
       }
     ],
     lat: 22.6667,
     lng: 106.25,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ban_Gioc_-_Detian_Falls2.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Bangioc9tam.jpg/960px-Bangioc9tam.jpg"
   },
   "Bắc Kạn - Thái Nguyên": {
     name: "Thái Nguyên (Bắc Kạn + Thái Nguyên)",
@@ -311,7 +311,7 @@ export const provincesData: Record<string, Province> = {
       },
       {
         name: "Miến dong",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Dongfen.JPG/800px-Dongfen.JPG"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Dongfen.JPG/960px-Dongfen.JPG"
       }
     ],
     attractions: [
@@ -332,7 +332,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 21.5667,
     lng: 105.85,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/19/TN_VNG_QT.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Tan_Cuong_Tea_culture.jpg/960px-Tan_Cuong_Tea_culture.jpg"
   },
   "Lạng Sơn": {
     name: "Lạng Sơn",
@@ -354,11 +354,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Phở chua",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Ph%E1%BB%9F_chua_L%E1%BA%A1ng_S%C6%A1n.jpg/800px-Ph%E1%BB%9F_chua_L%E1%BA%A1ng_S%C6%A1n.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/960px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg"
       },
       {
         name: "Vịt quay lá mắc mật",
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Shaoruzhu.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/M%E1%BA%ABu_S%C6%A1n.jpg/960px-M%E1%BA%ABu_S%C6%A1n.jpg"
       }
     ],
     attractions: [
@@ -372,7 +372,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 21.8333,
     lng: 106.7667,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/M%E1%BA%ABu_S%C6%A1n.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mau_Son.JPG/960px-Mau_Son.JPG"
   },
   "Quảng Ninh": {
     name: "Quảng Ninh",
@@ -394,11 +394,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Chả mực Hạ Long",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ch%E1%BA%A3_m%E1%BB%B1c.jpg/800px-Ch%E1%BA%A3_m%E1%BB%B1c.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Ch%E1%BA%A3_m%E1%BB%B1c.jpg/960px-Ch%E1%BA%A3_m%E1%BB%B1c.jpg"
       },
       {
         name: "Sá sùng",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Sipuncula.jpg/800px-Sipuncula.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Sipuncula.jpg/960px-Sipuncula.jpg"
       }
     ],
     attractions: [
@@ -407,13 +407,13 @@ export const provincesData: Record<string, Province> = {
         lat: 20.91,
         lng: 107.18,
         highlights: "Di sản thiên nhiên thế giới UNESCO.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/29/V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg/960px-V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg",
         videoUrl: "https://www.youtube.com/watch?v=Q1b_hG7X8-g"
       }
     ],
     lat: 21,
     lng: 107.3333,
-    image: "https://upload.wikimedia.org/wikipedia/commons/d/d3/A_view_of_Ha_Long_Bay_from_the_high_point_of_Sun_Sot_cave_%2831520203451%29.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg/960px-V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg"
   },
   "Phú Thọ - Vĩnh Phúc - Hòa Bình": {
     name: "Phú Thọ (Phú Thọ + Vĩnh Phúc + Hòa Bình)",
@@ -439,7 +439,7 @@ export const provincesData: Record<string, Province> = {
       },
       {
         name: "Cơm lam Hòa Bình",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/C%C6%A1m_lam.jpg/800px-C%C6%A1m_lam.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Tr%C3%AAn_%C4%91%E1%BA%ADp_th%E1%BB%A7y_%C4%91i%E1%BB%87n_H%C3%B2a_B%C3%ACnh_nh%C3%ACn_to%C3%A0n_c%E1%BA%A3nh.jpg/960px-Tr%C3%AAn_%C4%91%E1%BA%ADp_th%E1%BB%A7y_%C4%91i%E1%BB%87n_H%C3%B2a_B%C3%ACnh_nh%C3%ACn_to%C3%A0n_c%E1%BA%A3nh.jpg"
       }
     ],
     attractions: [
@@ -448,7 +448,7 @@ export const provincesData: Record<string, Province> = {
         lat: 21.36,
         lng: 105.32,
         highlights: "Khu di tích lịch sử quốc gia đặc biệt.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/f/f8/Mausoleum_of_Hung_King.JPG"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Mausoleum_of_Hung_King.JPG/960px-Mausoleum_of_Hung_King.JPG"
       },
       {
         name: "Tam Đảo",
@@ -460,7 +460,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 21.3167,
     lng: 105.2167,
-    image: "https://upload.wikimedia.org/wikipedia/commons/2/21/%C4%90%C6%B0%E1%BB%9Dng_l%C3%AAn_%C4%90%E1%BB%81n_H%C3%B9ng_-_panoramio.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/af/C%C3%A1nh_%C4%91%E1%BB%93ng_d%C6%B0%E1%BB%9Bi_ch%C3%A2n_n%C3%BAi_Tam_%C4%90%E1%BA%A3o.jpg"
   },
   "Hà Nội": {
     name: "Hà Nội",
@@ -482,11 +482,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Phở Hà Nội",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/800px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/960px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg"
       },
       {
         name: "Bún chả",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg/800px-B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg/960px-B%C3%BAn_ch%E1%BA%A3_Th%E1%BB%A5y_Khu%C3%AA.jpg"
       }
     ],
     attractions: [
@@ -500,7 +500,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 21.0285,
     lng: 105.8542,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/10/Hanoi_Skyline_-_NKS.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1c/Hoan_Kiem.jpg"
   },
   "Bắc Ninh - Bắc Giang": {
     name: "Bắc Ninh (Bắc Ninh + Bắc Giang)",
@@ -522,11 +522,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bánh phu thê",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Phu_The_Cake.jpg/800px-Phu_The_Cake.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Phu_The_Cake.jpg/960px-Phu_The_Cake.jpg"
       },
       {
         name: "Vải thiều Lục Ngạn",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Litchi_chinensis_Luc_Ngan.jpg/800px-Litchi_chinensis_Luc_Ngan.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg/800px-V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg"
       }
     ],
     attractions: [
@@ -540,7 +540,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 21.1833,
     lng: 106.05,
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Trung_t%C3%A2m_v%C4%83n_h%C3%B3a_Kinh_B%E1%BA%AFc.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Dau_pagoda.jpg"
   },
   "Hải Phòng": {
     name: "Hải Phòng",
@@ -566,7 +566,7 @@ export const provincesData: Record<string, Province> = {
       },
       {
         name: "Nem cua bể",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nem_cua_b%E1%BB%83_H%C3%A0_N%E1%BB%99i_t%E1%BA%A1i_Nguy%E1%BB%85n_S%C6%A1n%2C_T%C3%A2n_Ph%C3%BA%2C_th%C3%A1ng_9_n%C4%83m_2018_%283%29.jpg/800px-Nem_cua_b%E1%BB%83_H%C3%A0_N%E1%BB%99i_t%E1%BA%A1i_Nguy%E1%BB%85n_S%C6%A1n%2C_T%C3%A2n_Ph%C3%BA%2C_th%C3%A1ng_9_n%C4%83m_2018_%283%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Nem_cua_b%E1%BB%83_H%C3%A0_N%E1%BB%99i_t%E1%BA%A1i_Nguy%E1%BB%85n_S%C6%A1n%2C_T%C3%A2n_Ph%C3%BA%2C_th%C3%A1ng_9_n%C4%83m_2018_%283%29.jpg/960px-Nem_cua_b%E1%BB%83_H%C3%A0_N%E1%BB%99i_t%E1%BA%A1i_Nguy%E1%BB%85n_S%C6%A1n%2C_T%C3%A2n_Ph%C3%BA%2C_th%C3%A1ng_9_n%C4%83m_2018_%283%29.jpg"
       }
     ],
     attractions: [
@@ -580,7 +580,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 20.8449,
     lng: 106.6881,
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Haiphong2020.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/QD_Catba2.jpg/960px-QD_Catba2.jpg"
   },
   "Hải Dương - Hưng Yên - Thái Bình": {
     name: "Hải Dương (Hải Dương + Hưng Yên + Thái Bình)",
@@ -606,7 +606,7 @@ export const provincesData: Record<string, Province> = {
       },
       {
         name: "Nhãn lồng",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Longan_tree_at_Pine_Island_Nursery.jpg/800px-Longan_tree_at_Pine_Island_Nursery.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Longan_tree_at_Pine_Island_Nursery.jpg/960px-Longan_tree_at_Pine_Island_Nursery.jpg"
       }
     ],
     attractions: [
@@ -620,7 +620,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 20.9333,
     lng: 106.3167,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chuakeothaibinh.jpg/1024px-Chuakeothaibinh.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Chuakeothaibinh.jpg/960px-Chuakeothaibinh.jpg"
   },
   "Hà Nam - Nam Định - Ninh Bình": {
     name: "Nam Định (Hà Nam + Nam Định + Ninh Bình)",
@@ -642,11 +642,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Phở bò Nam Định",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/800px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/960px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg"
       },
       {
         name: "Thịt dê núi",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Goat_meat_dish.jpg/800px-Goat_meat_dish.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goats_in_Ninh_H%E1%BA%A3i%2C_Ninh_Binh_province%2C_Vietnam%2C_20240201_1521_4869.jpg/960px-Goats_in_Ninh_H%E1%BA%A3i%2C_Ninh_Binh_province%2C_Vietnam%2C_20240201_1521_4869.jpg"
       }
     ],
     attractions: [
@@ -661,7 +661,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 20.4333,
     lng: 106.1667,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Muaxuantamcoc.jpg/1024px-Muaxuantamcoc.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Muaxuantamcoc.jpg"
   },
   "Thanh Hóa": {
     name: "Thanh Hóa",
@@ -683,7 +683,7 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Nem chua",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Fermented_pork_wrapped_in_leaves.jpg/800px-Fermented_pork_wrapped_in_leaves.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Fermented_pork_wrapped_in_leaves.jpg/960px-Fermented_pork_wrapped_in_leaves.jpg"
       },
       {
         name: "Chả tôm",
@@ -696,12 +696,12 @@ export const provincesData: Record<string, Province> = {
         lat: 19.73,
         lng: 105.9,
         highlights: "Bãi biển du lịch sầm uất.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Sam_Son_beach.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Sam_Son_beach.jpg/960px-Sam_Son_beach.jpg"
       }
     ],
     lat: 19.8,
     lng: 105.7667,
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Le_Loi_statue.JPG"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Sam_Son_beach.jpg/960px-Sam_Son_beach.jpg"
   },
   "Nghệ An": {
     name: "Nghệ An",
@@ -723,11 +723,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Súp lươn",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/S%C3%BAp_l%C6%B0%C6%A1n_Ngh%E1%BB%87_An.jpg/800px-S%C3%BAp_l%C6%B0%C6%A1n_Ngh%E1%BB%87_An.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/89/Monopterus_albus_4.jpg"
       },
       {
         name: "Nhút Thanh Chương",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Nh%C3%BAt_Thanh_Ch%C6%B0%C6%A1ng.jpg/800px-Nh%C3%BAt_Thanh_Ch%C6%B0%C6%A1ng.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Fermented_pork_wrapped_in_leaves.jpg/800px-Fermented_pork_wrapped_in_leaves.jpg"
       }
     ],
     attractions: [
@@ -741,7 +741,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 19.3333,
     lng: 104.9,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Quangtruonghochiminh.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vietnam_location_map.svg/800px-Vietnam_location_map.svg.png"
   },
   "Hà Tĩnh": {
     name: "Hà Tĩnh",
@@ -763,11 +763,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Kẹo cu đơ",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/KeoCudo.JPG/800px-KeoCudo.JPG"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/KeoCudo.JPG/960px-KeoCudo.JPG"
       },
       {
         name: "Mực nhảy Vũng Áng",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Fresh_squid.jpg/800px-Fresh_squid.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Fermented_pork_wrapped_in_leaves.jpg/800px-Fermented_pork_wrapped_in_leaves.jpg"
       }
     ],
     attractions: [
@@ -776,12 +776,12 @@ export const provincesData: Record<string, Province> = {
         lat: 18.38,
         lng: 105.75,
         highlights: "Di tích lịch sử thanh niên xung phong.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Ng%C3%A3_ba_%C4%90%E1%BB%93ng_L%E1%BB%99c.jpg/800px-Ng%C3%A3_ba_%C4%90%E1%BB%93ng_L%E1%BB%99c.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Nga_ba_Dong_Loc.jpg/800px-Nga_ba_Dong_Loc.jpg"
       }
     ],
     lat: 18.3333,
     lng: 105.9,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ho_Ke_Go.jpg/1024px-Ho_Ke_Go.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vietnam_location_map.svg/800px-Vietnam_location_map.svg.png"
   },
   "Quảng Bình - Quảng Trị": {
     name: "Quảng Bình (Quảng Bình + Quảng Trị)",
@@ -803,11 +803,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bánh lọc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/B%C3%A1nh_b%C3%A8o%2C_b%E1%BB%99t_l%E1%BB%8Dc%2C_nem_chua.jpg/800px-B%C3%A1nh_b%C3%A8o%2C_b%E1%BB%99t_l%E1%BB%8Dc%2C_nem_chua.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/B%C3%A1nh_b%C3%A8o%2C_b%E1%BB%99t_l%E1%BB%8Dc%2C_nem_chua.jpg/960px-B%C3%A1nh_b%C3%A8o%2C_b%E1%BB%99t_l%E1%BB%8Dc%2C_nem_chua.jpg"
       },
       {
         name: "Cháo canh",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/B%C3%A1nh_canh_Qu%E1%BA%A3ng_B%C3%ACnh.jpg/800px-B%C3%A1nh_canh_Qu%E1%BA%A3ng_B%C3%ACnh.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Ch%C3%A1o_l%C3%B2ng.jpg/960px-Ch%C3%A1o_l%C3%B2ng.jpg"
       }
     ],
     attractions: [
@@ -821,7 +821,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 17.4833,
     lng: 106.6,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Phongnhakebang6.jpg/1024px-Phongnhakebang6.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Phongnhakebang6.jpg/960px-Phongnhakebang6.jpg"
   },
   "TP. Huế": {
     name: "Thừa Thiên Huế (TP. Huế)",
@@ -843,7 +843,7 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bún bò Huế",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bun-Bo-Hue-from-Huong-Giang-2011.jpg/800px-Bun-Bo-Hue-from-Huong-Giang-2011.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Bun-Bo-Hue-from-Huong-Giang-2011.jpg/960px-Bun-Bo-Hue-from-Huong-Giang-2011.jpg"
       },
       {
         name: "Bánh bèo nậm lọc",
@@ -862,7 +862,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 16.4667,
     lng: 107.6,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Hue_Imperial_City_Gate.jpg/1024px-Hue_Imperial_City_Gate.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b9/%C4%90%E1%BA%A1i_n%E1%BB%99i.jpg"
   },
   "Đà Nẵng - Quảng Nam": {
     name: "Đà Nẵng (Đà Nẵng + Quảng Nam)",
@@ -884,11 +884,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Mì Quảng",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Mi_Quang_1A_Danang.jpg/800px-Mi_Quang_1A_Danang.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Mi_Quang_1A_Danang.jpg/960px-Mi_Quang_1A_Danang.jpg"
       },
       {
         name: "Cao lầu",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Cao_l%E1%BA%A7u_%28144854_994%29.jpg/800px-Cao_l%E1%BA%A7u_%28144854_994%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Cao_l%E1%BA%A7u_%28144854_994%29.jpg/960px-Cao_l%E1%BA%A7u_%28144854_994%29.jpg"
       }
     ],
     attractions: [
@@ -911,7 +911,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 16.0667,
     lng: 108.2333,
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Han_River_Bridge_in_Vietnam_Night_View.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vietnam_location_map.svg/800px-Vietnam_location_map.svg.png"
   },
   "Quảng Ngãi": {
     name: "Quảng Ngãi",
@@ -933,11 +933,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Tỏi Lý Sơn",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Ly_Son3.jpg/800px-Ly_Son3.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Ly_Son3.jpg/960px-Ly_Son3.jpg"
       },
       {
         name: "Don",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Don_Qu%E1%BA%A3ng_Ng%C3%A3i.jpg/800px-Don_Qu%E1%BA%A3ng_Ng%C3%A3i.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/0/08/Miguel_de_Cervantes_%281605%29_El_ingenioso_hidalgo_Don_Quixote_de_la_Mancha.png"
       }
     ],
     attractions: [
@@ -951,7 +951,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 15.1167,
     lng: 108.8,
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a5/DUNG_QUAT_REFINERY_-_panoramio.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/C%E1%BB%95ng_ch%C3%A0o_tr%C3%AAn_Huy%E1%BB%87n_%C4%90%E1%BA%A3o_L%C3%BD_S%C6%A1n_-_Qu%E1%BA%A3ng_Ng%C3%A3i.jpg/960px-C%E1%BB%95ng_ch%C3%A0o_tr%C3%AAn_Huy%E1%BB%87n_%C4%90%E1%BA%A3o_L%C3%BD_S%C6%A1n_-_Qu%E1%BA%A3ng_Ng%C3%A3i.jpg"
   },
   "Gia Lai - Kon Tum - Bình Định": {
     name: "Gia Lai (Gia Lai + Kon Tum + Bình Định)",
@@ -973,11 +973,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Phở khô Gia Lai",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ph%E1%BB%9F_kh%C3%B4_Gia_Lai.jpg/800px-Ph%E1%BB%9F_kh%C3%B4_Gia_Lai.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg/960px-Ph%E1%BB%9F_b%C3%B2%2C_C%E1%BA%A7u_Gi%E1%BA%A5y%2C_H%C3%A0_N%E1%BB%99i.jpg"
       },
       {
         name: "Bánh xèo tôm nhảy",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/B%C3%A1nh_x%C3%A8o_t%C3%B4m_nh%E1%BA%A3y.jpg/800px-B%C3%A1nh_x%C3%A8o_t%C3%B4m_nh%E1%BA%A3y.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg/800px-B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg"
       }
     ],
     attractions: [
@@ -986,19 +986,19 @@ export const provincesData: Record<string, Province> = {
         lat: 14.05,
         lng: 108,
         highlights: "Đôi mắt Pleiku trong xanh.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Bien_Ho%2C_Gia_Lai.jpg/800px-Bien_Ho%2C_Gia_Lai.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Bien_Ho_Pleiku.jpg/800px-Bien_Ho_Pleiku.jpg"
       },
       {
         name: "Kỳ Co",
         lat: 13.93,
         lng: 109.3,
         highlights: "Maldives của Việt Nam.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Ky_Co_beach.jpg/800px-Ky_Co_beach.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Ky_Co_Beach.jpg/800px-Ky_Co_Beach.jpg"
       }
     ],
     lat: 13.9833,
     lng: 108,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Chi%E1%BB%81u_cao_nguy%C3%AAn_-_Late_afternoon_in_the_Central_High_Plateaux_-_panoramio.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Vietnam_location_map.svg/800px-Vietnam_location_map.svg.png"
   },
   "Đắk Lắk - Đắk Nông": {
     name: "Đắk Lắk (Đắk Lắk + Đắk Nông)",
@@ -1020,11 +1020,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Cà phê Buôn Ma Thuột",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Roasted_coffee_beans.jpg/800px-Roasted_coffee_beans.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Bmtcitycenter.png/960px-Bmtcitycenter.png"
       },
       {
         name: "Gà nướng bản Đôn",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/G%C3%A0_n%C6%B0%E1%BB%9Bng_B%E1%BA%A3n_%C4%90%C3%B4n.jpg/800px-G%C3%A0_n%C6%B0%E1%BB%9Bng_B%E1%BA%A3n_%C4%90%C3%B4n.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Srepok_Ban_Don.JPG/960px-Srepok_Ban_Don.JPG"
       }
     ],
     attractions: [
@@ -1033,12 +1033,12 @@ export const provincesData: Record<string, Province> = {
         lat: 12.42,
         lng: 108.17,
         highlights: "Hồ nước ngọt tự nhiên lớn nhất Tây Nguyên.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Lak_Lake.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lak_Lake.jpg/960px-Lak_Lake.jpg"
       }
     ],
     lat: 12.6667,
     lng: 108.0333,
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dray_Nur_waterfall.jpg/1024px-Dray_Nur_waterfall.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Lak_Lake.jpg/960px-Lak_Lake.jpg"
   },
   "Phú Yên - Khánh Hòa - Ninh Thuận": {
     name: "Khánh Hòa (Phú Yên + Khánh Hòa + Ninh Thuận)",
@@ -1060,11 +1060,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Mắt cá ngừ đại dương",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Tuna_eye.jpg/800px-Tuna_eye.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/2/21/Tuna_assortment.png"
       },
       {
         name: "Nho Ninh Thuận",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Grapes_in_Ninh_Thuan.jpg/800px-Grapes_in_Ninh_Thuan.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Po_Klong_Garai.jpg/960px-Po_Klong_Garai.jpg"
       }
     ],
     attractions: [
@@ -1073,7 +1073,7 @@ export const provincesData: Record<string, Province> = {
         lat: 12.23,
         lng: 109.2,
         highlights: "Một trong những vịnh biển đẹp nhất thế giới.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Arriving_in_Nha_Trang_-_Vietnam.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Nha_Trang%2C_Kh%C3%A1nh_H%C3%B2a.png/960px-Nha_Trang%2C_Kh%C3%A1nh_H%C3%B2a.png"
       },
       {
         name: "Ghềnh Đá Đĩa",
@@ -1085,7 +1085,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 12.25,
     lng: 109.1833,
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Nha_Trang_%2C_Vietnam_-_panoramio_%2835%29.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a_-_Ph%C3%BA_Y%C3%AAn.jpg/960px-G%C3%A0nh_%C4%90%C3%A1_%C4%90%C4%A9a_-_Ph%C3%BA_Y%C3%AAn.jpg"
   },
   "Lâm Đồng - Bình Thuận": {
     name: "Lâm Đồng (Lâm Đồng + Bình Thuận)",
@@ -1111,7 +1111,7 @@ export const provincesData: Record<string, Province> = {
       },
       {
         name: "Hải sản Mũi Né",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Grilled_seafood_in_Vietnam.jpg/800px-Grilled_seafood_in_Vietnam.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Vietnam_region_map.svg/960px-Vietnam_region_map.svg.png"
       }
     ],
     attractions: [
@@ -1120,19 +1120,19 @@ export const provincesData: Record<string, Province> = {
         lat: 11.94,
         lng: 108.44,
         highlights: "Thành phố sương mù lãng mạn.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Da_Lat_-_Viet_Nam.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Da_Lat_-_Viet_Nam.jpg/960px-Da_Lat_-_Viet_Nam.jpg"
       },
       {
         name: "Đồi cát Mũi Né",
         lat: 10.94,
         lng: 108.28,
         highlights: "Tiểu sa mạc ven biển.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Vietnam%2C_Mui_Ne_sand_dune.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Vietnam%2C_Mui_Ne_sand_dune.jpg/960px-Vietnam%2C_Mui_Ne_sand_dune.jpg"
       }
     ],
     lat: 11.9333,
     lng: 108.4333,
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Da_Lat%2C_view_to_Xuan_Huong_lake_2.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Vietnam%2C_Mui_Ne_sand_dune.jpg/960px-Vietnam%2C_Mui_Ne_sand_dune.jpg"
   },
   "Bình Phước - Bình Dương - Đồng Nai": {
     name: "Đồng Nai (Bình Phước + Bình Dương + Đồng Nai)",
@@ -1154,11 +1154,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Gỏi bưởi Tân Triều",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Pomelo_salad.jpg/800px-Pomelo_salad.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Vietnam_location_map.svg/960px-Vietnam_location_map.svg.png"
       },
       {
         name: "Hạt điều rang muối",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cashew_apples.jpg/800px-Cashew_apples.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Cashew_apples.jpg/960px-Cashew_apples.jpg"
       }
     ],
     attractions: [
@@ -1167,12 +1167,12 @@ export const provincesData: Record<string, Province> = {
         lat: 11.42,
         lng: 107.42,
         highlights: "Khu dự trữ sinh quyển thế giới.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/45/BenCu_forest_structure_23Dec08.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/BenCu_forest_structure_23Dec08.jpg/960px-BenCu_forest_structure_23Dec08.jpg"
       }
     ],
     lat: 10.95,
     lng: 106.8167,
-    image: "https://upload.wikimedia.org/wikipedia/commons/8/85/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_V%C4%83n_mi%E1%BA%BFu_Tr%E1%BA%A5n_Bi%C3%AAn.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/BenCu_forest_structure_23Dec08.jpg/960px-BenCu_forest_structure_23Dec08.jpg"
   },
   "Tây Ninh": {
     name: "Tây Ninh",
@@ -1207,12 +1207,12 @@ export const provincesData: Record<string, Province> = {
         lat: 11.37,
         lng: 106.16,
         highlights: "Nóc nhà Đông Nam Bộ.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Dau_Tieng_Lake_-_50766650163.png"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dau_Tieng_Lake_-_50766650163.png/960px-Dau_Tieng_Lake_-_50766650163.png"
       }
     ],
     lat: 11.3,
     lng: 106.1,
-    image: "https://upload.wikimedia.org/wikipedia/commons/b/bc/Ho_dau_tieng.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Dau_Tieng_Lake_-_50766650163.png/960px-Dau_Tieng_Lake_-_50766650163.png"
   },
   "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu": {
     name: "TP. Hồ Chí Minh (TP.HCM + Long An + BR-VT)",
@@ -1234,11 +1234,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Cơm tấm",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg/800px-C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg/960px-C%C6%A1m_T%E1%BA%A5m%2C_Da_Nang%2C_Vietnam.jpg"
       },
       {
         name: "Bánh khọt Vũng Tàu",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/B%C3%A1nh_kh%E1%BB%8Dt.jpg/800px-B%C3%A1nh_kh%E1%BB%8Dt.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/B%C3%A1nh_kh%E1%BB%8Dt.jpg/960px-B%C3%A1nh_kh%E1%BB%8Dt.jpg"
       }
     ],
     attractions: [
@@ -1247,7 +1247,7 @@ export const provincesData: Record<string, Province> = {
         lat: 10.77,
         lng: 106.69,
         highlights: "Biểu tượng lịch sử của Sài Gòn.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/9/91/Ben_Thanh_market_2.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Ben_Thanh_market_2.jpg/960px-Ben_Thanh_market_2.jpg",
         videoUrl: "https://www.youtube.com/watch?v=4_b_2n-P33w"
       },
       {
@@ -1260,7 +1260,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 10.7769,
     lng: 106.7009,
-    image: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Ho_Chi_Minh_City_Skyline_%28Night%29.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/B%E1%BB%9D_bi%E1%BB%83n_V%C5%A9ng_T%C3%A0u.JPG/960px-B%E1%BB%9D_bi%E1%BB%83n_V%C5%A9ng_T%C3%A0u.JPG"
   },
   "Đồng Tháp - Tiền Giang": {
     name: "Đồng Tháp (Đồng Tháp + Tiền Giang)",
@@ -1282,11 +1282,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Hủ tiếu Mỹ Tho",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg/800px-H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg/960px-H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg"
       },
       {
         name: "Nem Lai Vung",
-        image: "https://upload.wikimedia.org/wikipedia/vi/thumb/0/0d/Nem_chua_Lai_Vung.jpg/800px-Nem_chua_Lai_Vung.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/vi/thumb/0/0d/Nem_chua_Lai_Vung.jpg/960px-Nem_chua_Lai_Vung.jpg"
       }
     ],
     attractions: [
@@ -1302,12 +1302,12 @@ export const provincesData: Record<string, Province> = {
         lat: 10.33,
         lng: 106.03,
         highlights: "Văn hóa giao thương trên sông.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/8/80/Vietnam_08_-_122_-_Cai_Be_floating_market_%283185904536%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Vietnam_08_-_122_-_Cai_Be_floating_market_%283185904536%29.jpg/960px-Vietnam_08_-_122_-_Cai_Be_floating_market_%283185904536%29.jpg"
       }
     ],
     lat: 10.4667,
     lng: 105.6333,
-    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/C%E1%BA%A7u_Cao_L%C3%A3nh.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Vietnam_08_-_122_-_Cai_Be_floating_market_%283185904536%29.jpg/960px-Vietnam_08_-_122_-_Cai_Be_floating_market_%283185904536%29.jpg"
   },
   "Vĩnh Long - Bến Tre - Trà Vinh": {
     name: "Vĩnh Long (Vĩnh Long + Bến Tre + Trà Vinh)",
@@ -1329,11 +1329,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Kẹo dừa Bến Tre",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Cocnout_candy_8.jpg/800px-Cocnout_candy_8.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Cocnout_candy_8.jpg/960px-Cocnout_candy_8.jpg"
       },
       {
         name: "Bún nước lèo",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/B%C3%BAn_n%C6%B0%E1%BB%9Bc_l%C3%A8o.jpg/800px-B%C3%BAn_n%C6%B0%E1%BB%9Bc_l%C3%A8o.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/B%C3%BAn_n%C6%B0%E1%BB%9Bc_l%C3%A8o.jpg/960px-B%C3%BAn_n%C6%B0%E1%BB%9Bc_l%C3%A8o.jpg"
       }
     ],
     attractions: [
@@ -1347,7 +1347,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 10.25,
     lng: 105.9667,
-    image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Trung_t%C3%A2m_H%C3%A0nh_ch%C3%ADnh_t%E1%BB%89nh_V%C4%A9nh_Long.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/T%C3%A0u_du_l%E1%BB%8Bch_gh%C3%A9_c%E1%BB%93n_L%C3%A2n.jpg/960px-T%C3%A0u_du_l%E1%BB%8Bch_gh%C3%A9_c%E1%BB%93n_L%C3%A2n.jpg"
   },
   "TP. Cần Thơ - Hậu Giang - Sóc Trăng": {
     name: "Cần Thơ (TP. Cần Thơ + Hậu Giang + Sóc Trăng)",
@@ -1369,11 +1369,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bánh xèo miền Tây",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg/800px-B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg/960px-B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg"
       },
       {
         name: "Bánh pía Sóc Trăng",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Phu_The_Cake.jpg/800px-Phu_The_Cake.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Bakpia_pathok.jpg"
       }
     ],
     attractions: [
@@ -1382,7 +1382,7 @@ export const provincesData: Record<string, Province> = {
         lat: 10,
         lng: 105.75,
         highlights: "Chợ nổi sầm uất nhất miền Tây.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/6/62/M%E1%BB%99t_c%E1%BA%A3nh_%E1%BB%9F_ch%E1%BB%A3_n%E1%BB%95i_C%C3%A1i_R%C4%83ng.jpg",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/M%E1%BB%99t_c%E1%BA%A3nh_%E1%BB%9F_ch%E1%BB%A3_n%E1%BB%95i_C%C3%A1i_R%C4%83ng.jpg/960px-M%E1%BB%99t_c%E1%BA%A3nh_%E1%BB%9F_ch%E1%BB%A3_n%E1%BB%95i_C%C3%A1i_R%C4%83ng.jpg",
         videoUrl: "https://www.youtube.com/watch?v=5_b_2n-P33w"
       },
       {
@@ -1390,12 +1390,12 @@ export const provincesData: Record<string, Province> = {
         lat: 9.58,
         lng: 105.97,
         highlights: "Ngôi chùa Khmer cổ kính với đàn dơi khổng lồ.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/54/Ch%C3%B9a_D%C6%A1i_%2845715215502%29.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Ch%C3%B9a_D%C6%A1i_%2845715215502%29.jpg/960px-Ch%C3%B9a_D%C6%A1i_%2845715215502%29.jpg"
       }
     ],
     lat: 10.0333,
     lng: 105.7833,
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Can_Tho_Bridge.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Ch%C3%B9a_D%C6%A1i_%2845715215502%29.jpg/960px-Ch%C3%B9a_D%C6%A1i_%2845715215502%29.jpg"
   },
   "An Giang - Kiên Giang": {
     name: "Kiên Giang (An Giang + Kiên Giang)",
@@ -1417,11 +1417,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Bún cá Châu Đốc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/B%C3%BAn_c%C3%A1_Ch%C3%A2u_%C4%90%E1%BB%91c.jpg/800px-B%C3%BAn_c%C3%A1_Ch%C3%A2u_%C4%90%E1%BB%91c.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Saigon_Pho_with_pork.jpg/960px-Saigon_Pho_with_pork.jpg"
       },
       {
         name: "Gỏi cá trích Phú Quốc",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/G%E1%BB%8Fi_c%C3%A1_tr%C3%ADch.jpg/800px-G%E1%BB%8Fi_c%C3%A1_tr%C3%ADch.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Saigon_Pho_with_pork.jpg/960px-Saigon_Pho_with_pork.jpg"
       }
     ],
     attractions: [
@@ -1442,7 +1442,7 @@ export const provincesData: Record<string, Province> = {
     ],
     lat: 10.3833,
     lng: 105.4167,
-    image: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Mieuba2.jpg/960px-Mieuba2.jpg"
   },
   "Bạc Liêu - Cà Mau": {
     name: "Cà Mau (Bạc Liêu + Cà Mau)",
@@ -1464,11 +1464,11 @@ export const provincesData: Record<string, Province> = {
     food: [
       {
         name: "Cua Cà Mau",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mud_crab.jpg/800px-Mud_crab.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tuongdaimuicamau.jpg/960px-Tuongdaimuicamau.jpg"
       },
       {
         name: "Lẩu mắm",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/L%E1%BA%A9u_m%E1%BA%AFm.jpg/800px-L%E1%BA%A9u_m%E1%BA%AFm.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Day177lilybday.JPG/960px-Day177lilybday.JPG"
       }
     ],
     attractions: [
@@ -1477,19 +1477,19 @@ export const provincesData: Record<string, Province> = {
         lat: 8.6,
         lng: 104.73,
         highlights: "Điểm cực Nam trên đất liền của Việt Nam.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Tuongdaimuicamau.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Tuongdaimuicamau.jpg/960px-Tuongdaimuicamau.jpg"
       },
       {
         name: "Cánh đồng quạt gió",
         lat: 9.23,
         lng: 105.73,
         highlights: "Cánh đồng điện gió trên biển lớn nhất Việt Nam.",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/B%E1%BA%A1c_Li%C3%AAu_windpower_farm.jpg/960px-B%E1%BA%A1c_Li%C3%AAu_windpower_farm.jpg"
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/KamowK32A.jpg/960px-KamowK32A.jpg"
       }
     ],
     lat: 9.1833,
     lng: 105.15,
-    image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Muicamau.jpg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/KamowK32A.jpg/960px-KamowK32A.jpg"
   },
 };
 

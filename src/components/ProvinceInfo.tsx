@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Maximize, Users, BookOpen, Utensils, Camera, Trophy, Image as ImageIcon, TrendingUp, CloudSun, Volume2, VolumeX } from 'lucide-react';
+import { MapPin, Maximize, Users, BookOpen, Utensils, Camera, Trophy, Image as ImageIcon, TrendingUp, CloudSun, Volume2, VolumeX, Map } from 'lucide-react';
 import { Province, Attraction } from '../data/provinces';
 import AttractionModal from './AttractionModal';
 import AttractionCard from './AttractionCard';
+import ProvinceItineraryModal from './ProvinceItineraryModal';
 
 interface ProvinceInfoProps {
   province: Province;
@@ -14,11 +15,13 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
   const [expanded, setExpanded] = useState(false);
   const [selectedAttraction, setSelectedAttraction] = useState<Attraction | null>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
+  const [showItinerary, setShowItinerary] = useState(false);
 
   // Reset state when province changes
   useEffect(() => {
     setExpanded(false);
     setSelectedAttraction(null);
+    setShowItinerary(false);
     stopSpeaking();
   }, [province.name]);
 
@@ -124,13 +127,22 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             {isSpeaking ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
           </button>
         </div>
-        <button
-          onClick={onStartGameshow}
-          className="flex items-center justify-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded-xl hover:bg-amber-200 transition-colors border border-amber-300"
-        >
-          <Trophy className="w-5 h-5" />
-          Gameshow {province.name}
-        </button>
+        <div className="flex flex-wrap items-center gap-2">
+          <button
+            onClick={() => setShowItinerary(true)}
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 font-bold rounded-xl hover:bg-blue-200 transition-colors border border-blue-300"
+          >
+            <Map className="w-5 h-5" />
+            Lịch trình AI
+          </button>
+          <button
+            onClick={onStartGameshow}
+            className="flex items-center justify-center gap-2 px-4 py-2 bg-amber-100 text-amber-700 font-bold rounded-xl hover:bg-amber-200 transition-colors border border-amber-300"
+          >
+            <Trophy className="w-5 h-5" />
+            Gameshow
+          </button>
+        </div>
       </div>
 
       {/* Hero Image */}
@@ -269,6 +281,13 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
           attraction={selectedAttraction}
           userLoc={userLoc}
           onClose={() => setSelectedAttraction(null)}
+        />
+      )}
+
+      {showItinerary && (
+        <ProvinceItineraryModal
+          province={province}
+          onClose={() => setShowItinerary(false)}
         />
       )}
     </div>
