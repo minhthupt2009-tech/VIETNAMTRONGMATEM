@@ -1,112 +1,112 @@
 import React from 'react';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography, ZoomableGroup, Marker } from 'react-simple-maps';
 
-// TopoJSON từ Highcharts (đã được kiểm chứng hoạt động tốt)
-const geoUrl = "https://code.highcharts.com/mapdata/countries/vn/vn-all.topo.json";
+// TopoJSON từ Highcharts (đã được tải về local để tránh lỗi CORS)
+const geoUrl = "/vn-all.topo.json";
 
 // Mapping từ hc-key của bản đồ sang 34 tỉnh thành (theo địa lý hành chính mới giả định)
 const provinceMap: Record<string, string> = {
-  "vn-li": "Lai Châu",
-  "vn-db": "Điện Biên",
-  "vn-311": "Sơn La",
-  "vn-lo": "Lào Cai - Yên Bái",
-  "vn-yb": "Lào Cai - Yên Bái",
-  "vn-hg": "Hà Giang - Tuyên Quang",
-  "vn-tq": "Hà Giang - Tuyên Quang",
-  "vn-cb": "Cao Bằng",
-  "vn-307": "Bắc Kạn - Thái Nguyên",
-  "vn-ty": "Bắc Kạn - Thái Nguyên",
-  "vn-ls": "Lạng Sơn",
   "vn-qn": "Quảng Ninh",
-  "vn-ho": "Phú Thọ - Vĩnh Phúc - Hòa Bình",
-  "vn-pt": "Phú Thọ - Vĩnh Phúc - Hòa Bình",
-  "vn-vc": "Phú Thọ - Vĩnh Phúc - Hòa Bình",
-  "vn-318": "Hà Nội",
-  "vn-bn": "Bắc Ninh - Bắc Giang",
-  "vn-bg": "Bắc Ninh - Bắc Giang",
-  "vn-3623": "Hải Phòng",
-  "vn-hd": "Hải Dương - Hưng Yên - Thái Bình",
-  "vn-317": "Hải Dương - Hưng Yên - Thái Bình",
-  "vn-tb": "Hải Dương - Hưng Yên - Thái Bình",
-  "vn-nd": "Hà Nam - Nam Định - Ninh Bình",
-  "vn-nb": "Hà Nam - Nam Định - Ninh Bình",
-  "vn-hm": "Hà Nam - Nam Định - Ninh Bình",
-  "vn-th": "Thanh Hóa",
-  "vn-na": "Nghệ An",
-  "vn-328": "Hà Tĩnh",
-  "vn-qb": "Quảng Bình - Quảng Trị",
-  "vn-qt": "Quảng Bình - Quảng Trị",
-  "vn-tt": "TP. Huế",
-  "vn-da": "Đà Nẵng - Quảng Nam",
-  "vn-300": "Đà Nẵng - Quảng Nam",
+  "vn-kh": "Khánh Hoà",
+  "vn-tg": "Đồng Tháp",
+  "vn-bv": "TP. Hồ Chí Minh",
+  "vn-bu": "Lâm Đồng",
+  "vn-hc": "TP. Hồ Chí Minh",
+  "vn-br": "Vĩnh Long",
+  "vn-st": "TP. Cần Thơ",
+  "vn-pt": "Phú Thọ",
+  "vn-yb": "Lào Cai",
+  "vn-hd": "TP. Hải Phòng",
+  "vn-bn": "Bắc Ninh",
+  "vn-317": "Hưng Yên",
+  "vn-nb": "Ninh Bình",
+  "vn-hm": "Ninh Bình",
+  "vn-ho": "Phú Thọ",
+  "vn-vc": "Phú Thọ",
+  "vn-318": "TP. Hà Nội",
+  "vn-bg": "Bắc Ninh",
+  "vn-tb": "Hưng Yên",
+  "vn-ld": "Lâm Đồng",
+  "vn-bp": "Đồng Nai",
+  "vn-py": "Đắk Lắk",
+  "vn-bd": "Gia Lai",
+  "vn-724": "Quảng Ngãi",
   "vn-qg": "Quảng Ngãi",
-  "vn-724": "Gia Lai - Kon Tum - Bình Định",
-  "vn-299": "Gia Lai - Kon Tum - Bình Định",
-  "vn-bd": "Gia Lai - Kon Tum - Bình Định",
-  "vn-723": "Đắk Lắk - Đắk Nông",
-  "vn-6365": "Đắk Lắk - Đắk Nông",
-  "vn-py": "Phú Yên - Khánh Hòa - Ninh Thuận",
-  "vn-kh": "Phú Yên - Khánh Hòa - Ninh Thuận",
-  "vn-nt": "Phú Yên - Khánh Hòa - Ninh Thuận",
-  "vn-ld": "Lâm Đồng - Bình Thuận",
-  "vn-bu": "Lâm Đồng - Bình Thuận",
-  "vn-bp": "Bình Phước - Bình Dương - Đồng Nai",
-  "vn-bi": "Bình Phước - Bình Dương - Đồng Nai",
-  "vn-331": "Bình Phước - Bình Dương - Đồng Nai",
+  "vn-331": "Đồng Nai",
+  "vn-dt": "Đồng Tháp",
+  "vn-la": "Tây Ninh",
+  "vn-3623": "TP. Hải Phòng",
+  "vn-337": "TP. Cần Thơ",
+  "vn-bl": "Cà Mau",
+  "vn-vl": "Vĩnh Long",
   "vn-tn": "Tây Ninh",
-  "vn-hc": "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu",
-  "vn-la": "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu",
-  "vn-bv": "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu",
-  "vn-dt": "Đồng Tháp - Tiền Giang",
-  "vn-tg": "Đồng Tháp - Tiền Giang",
-  "vn-vl": "Vĩnh Long - Bến Tre - Trà Vinh",
-  "vn-br": "Vĩnh Long - Bến Tre - Trà Vinh",
-  "vn-tv": "Vĩnh Long - Bến Tre - Trà Vinh",
-  "vn-333": "TP. Cần Thơ - Hậu Giang - Sóc Trăng",
-  "vn-337": "TP. Cần Thơ - Hậu Giang - Sóc Trăng",
-  "vn-st": "TP. Cần Thơ - Hậu Giang - Sóc Trăng",
-  "vn-ag": "An Giang - Kiên Giang",
-  "vn-kg": "An Giang - Kiên Giang",
-  "vn-bl": "Bạc Liêu - Cà Mau",
-  "vn-cm": "Bạc Liêu - Cà Mau"
+  "vn-ty": "Thái Nguyên",
+  "vn-li": "Lai Châu",
+  "vn-311": "Sơn La",
+  "vn-hg": "Tuyên Quang",
+  "vn-nd": "Ninh Bình",
+  "vn-328": "Hà Tĩnh",
+  "vn-na": "Nghệ An",
+  "vn-qb": "Quảng Trị",
+  "vn-723": "Lâm Đồng",
+  "vn-nt": "Khánh Hoà",
+  "vn-6365": "Đắk Lắk",
+  "vn-299": "Gia Lai",
+  "vn-300": "TP. Đà Nẵng",
+  "vn-qt": "Quảng Trị",
+  "vn-tt": "TP. Huế",
+  "vn-da": "TP. Đà Nẵng",
+  "vn-ag": "An Giang",
+  "vn-cm": "Cà Mau",
+  "vn-tv": "Vĩnh Long",
+  "vn-cb": "Cao Bằng",
+  "vn-kg": "An Giang",
+  "vn-lo": "Lào Cai",
+  "vn-db": "Điện Biên",
+  "vn-ls": "Lạng Sơn",
+  "vn-th": "Thanh Hóa",
+  "vn-307": "Thái Nguyên",
+  "vn-tq": "Tuyên Quang",
+  "vn-bi": "TP. Hồ Chí Minh",
+  "vn-333": "TP. Cần Thơ"
 };
 
 // Bảng màu cho 34 tỉnh thành để hiển thị ranh giới rõ ràng
 const provinceColors: Record<string, string> = {
-  "Lai Châu": "#ffcc00",
-  "Điện Biên": "#ff7b00",
-  "Sơn La": "#2563eb",
-  "Lào Cai - Yên Bái": "#06b6d4",
-  "Hà Giang - Tuyên Quang": "#10b981",
-  "Cao Bằng": "#ff7b00",
-  "Bắc Kạn - Thái Nguyên": "#06b6d4",
-  "Lạng Sơn": "#2563eb",
   "Quảng Ninh": "#ffcc00",
-  "Phú Thọ - Vĩnh Phúc - Hòa Bình": "#ff7b00",
-  "Hà Nội": "#2563eb",
-  "Bắc Ninh - Bắc Giang": "#10b981",
-  "Hải Phòng": "#06b6d4",
-  "Hải Dương - Hưng Yên - Thái Bình": "#ffcc00",
-  "Hà Nam - Nam Định - Ninh Bình": "#10b981",
-  "Thanh Hóa": "#ffcc00",
-  "Nghệ An": "#ff7b00",
-  "Hà Tĩnh": "#2563eb",
-  "Quảng Bình - Quảng Trị": "#06b6d4",
-  "TP. Huế": "#10b981",
-  "Đà Nẵng - Quảng Nam": "#ff7b00",
+  "Khánh Hoà": "#ff7b00",
+  "Đồng Tháp": "#2563eb",
+  "TP. Hồ Chí Minh": "#06b6d4",
+  "Lâm Đồng": "#10b981",
+  "Vĩnh Long": "#ffcc00",
+  "TP. Cần Thơ": "#ff7b00",
+  "Phú Thọ": "#2563eb",
+  "Lào Cai": "#06b6d4",
+  "TP. Hải Phòng": "#10b981",
+  "Bắc Ninh": "#ffcc00",
+  "Hưng Yên": "#ff7b00",
+  "Ninh Bình": "#2563eb",
+  "TP. Hà Nội": "#06b6d4",
+  "Đồng Nai": "#10b981",
+  "Đắk Lắk": "#ffcc00",
+  "Gia Lai": "#ff7b00",
   "Quảng Ngãi": "#2563eb",
-  "Gia Lai - Kon Tum - Bình Định": "#06b6d4",
-  "Đắk Lắk - Đắk Nông": "#10b981",
-  "Phú Yên - Khánh Hòa - Ninh Thuận": "#ffcc00",
-  "Lâm Đồng - Bình Thuận": "#ff7b00",
-  "Bình Phước - Bình Dương - Đồng Nai": "#2563eb",
   "Tây Ninh": "#06b6d4",
-  "TP. Hồ Chí Minh - Long An - Bà Rịa Vũng Tàu": "#10b981",
-  "Đồng Tháp - Tiền Giang": "#ffcc00",
-  "Vĩnh Long - Bến Tre - Trà Vinh": "#ff7b00",
-  "TP. Cần Thơ - Hậu Giang - Sóc Trăng": "#06b6d4",
-  "An Giang - Kiên Giang": "#2563eb",
-  "Bạc Liêu - Cà Mau": "#10b981"
+  "Cà Mau": "#10b981",
+  "Thái Nguyên": "#ffcc00",
+  "Lai Châu": "#ff7b00",
+  "Sơn La": "#2563eb",
+  "Tuyên Quang": "#06b6d4",
+  "Hà Tĩnh": "#10b981",
+  "Nghệ An": "#ffcc00",
+  "Quảng Trị": "#ff7b00",
+  "TP. Đà Nẵng": "#2563eb",
+  "TP. Huế": "#06b6d4",
+  "An Giang": "#10b981",
+  "Cao Bằng": "#ffcc00",
+  "Điện Biên": "#ff7b00",
+  "Lạng Sơn": "#2563eb",
+  "Thanh Hóa": "#06b6d4"
 };
 
 interface VietnamMapProps {
@@ -122,8 +122,8 @@ export default function VietnamMap({ onSelectProvince, onHoverProvince, onLeaveP
       <ComposableMap
         projection="geoMercator"
         projectionConfig={{
-          scale: 2000,
-          center: [106, 16] // Tọa độ trung tâm Việt Nam
+          scale: 1200,
+          center: [108, 15] // Tọa độ trung tâm Việt Nam bao gồm cả quần đảo
         }}
         className="w-full h-full outline-none"
       >
@@ -175,11 +175,48 @@ export default function VietnamMap({ onSelectProvince, onHoverProvince, onLeaveP
             }
           </Geographies>
 
+          {/* Quần đảo Hoàng Sa (Đà Nẵng) */}
+          <Marker coordinates={[111.9, 16.5]} onClick={(e) => onSelectProvince("TP. Đà Nẵng", e)} style={{ cursor: "pointer" }}>
+            <circle r={4} fill="#ff7b00" stroke="#fff" strokeWidth={1} />
+            <text
+              textAnchor="middle"
+              y={-10}
+              style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "10px", fontWeight: "bold" }}
+            >
+              QĐ. Hoàng Sa
+            </text>
+            <text
+              textAnchor="middle"
+              y={12}
+              style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "8px" }}
+            >
+              (TP. Đà Nẵng)
+            </text>
+          </Marker>
+
+          {/* Quần đảo Trường Sa (Khánh Hòa) */}
+          <Marker coordinates={[114.2, 10.0]} onClick={(e) => onSelectProvince("Khánh Hoà", e)} style={{ cursor: "pointer" }}>
+            <circle r={4} fill="#06b6d4" stroke="#fff" strokeWidth={1} />
+            <text
+              textAnchor="middle"
+              y={-10}
+              style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "10px", fontWeight: "bold" }}
+            >
+              QĐ. Trường Sa
+            </text>
+            <text
+              textAnchor="middle"
+              y={12}
+              style={{ fontFamily: "system-ui", fill: "#5D5A6D", fontSize: "8px" }}
+            >
+              (Khánh Hòa)
+            </text>
+          </Marker>
 
         </ZoomableGroup>
       </ComposableMap>
       
-      <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur px-4 py-2 rounded-lg shadow-sm text-sm text-slate-600 pointer-events-none">
+      <div className="hidden md:block absolute bottom-4 left-4 bg-white/80 backdrop-blur px-4 py-2 rounded-lg shadow-sm text-sm text-slate-600 pointer-events-none">
         <p>Bản đồ 34 tỉnh thành Việt Nam (Hành chính mới)</p>
         <p className="text-xs text-slate-400 mt-1">Sử dụng chuột để cuộn và thu phóng</p>
       </div>

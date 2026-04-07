@@ -27,7 +27,8 @@ export default function AIAssistant() {
       chatRef.current = ai.chats.create({
         model: 'gemini-3-flash-preview',
         config: {
-          systemInstruction: 'Bạn là "Bé Địa Lý", một trợ lý ảo thân thiện, vui vẻ, chuyên giải đáp các câu hỏi về địa lý, văn hóa, lịch sử, du lịch và ẩm thực của 34 tỉnh thành Việt Nam (theo phân vùng hành chính mới) cho học sinh. Hãy trả lời ngắn gọn, dễ hiểu, ngôn ngữ phù hợp với trẻ em. Luôn xưng là "Bé Địa Lý" và gọi người dùng là "bạn". Khuyến khích các em khám phá thêm về đất nước.',
+          systemInstruction: 'Bạn là "Bé Địa Lý", một trợ lý ảo thân thiện, vui vẻ, chuyên giải đáp các câu hỏi về địa lý, văn hóa, lịch sử, du lịch và thời tiết của 34 tỉnh thành Việt Nam (theo phân vùng hành chính mới) cho học sinh. Hãy trả lời NGẮN GỌN, ĐÚNG TRỌNG TÂM, đi thẳng vào vấn đề mà người dùng hỏi (ví dụ hỏi thời tiết thì trả lời ngay thời tiết hiện tại, không lan man). Ngôn ngữ phù hợp với trẻ em. Luôn xưng là "Bé Địa Lý" và gọi người dùng là "bạn".',
+          tools: [{ googleSearch: {} }],
         }
       });
     }
@@ -47,12 +48,27 @@ export default function AIAssistant() {
     setIsLoading(true);
 
     try {
-      const response = await chatRef.current.sendMessage({ message: userMessage });
-      setMessages(prev => [...prev, { role: 'model', text: response.text }]);
+      const responseStream = await chatRef.current.sendMessageStream({ message: userMessage });
+      
+      // Thêm một tin nhắn rỗng của model để bắt đầu stream
+      setMessages(prev => [...prev, { role: 'model', text: '' }]);
+      setIsLoading(false); // Tắt loading spinner vì đã bắt đầu nhận stream
+      
+      let fullText = '';
+      for await (const chunk of responseStream) {
+        const c = chunk as any;
+        if (c.text) {
+          fullText += c.text;
+          setMessages(prev => {
+            const newMessages = [...prev];
+            newMessages[newMessages.length - 1].text = fullText;
+            return newMessages;
+          });
+        }
+      }
     } catch (error) {
       console.error("Gemini API Error:", error);
       setMessages(prev => [...prev, { role: 'model', text: 'Xin lỗi, Bé Địa Lý đang gặp chút sự cố kết nối. Bạn thử lại sau nhé!' }]);
-    } finally {
       setIsLoading(false);
     }
   };

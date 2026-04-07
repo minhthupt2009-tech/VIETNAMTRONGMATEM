@@ -61,7 +61,7 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
       
       const textToRead = `
         Tỉnh ${province.name}. 
-        Vị trí: ${province.location}. 
+        Khu vực: ${province.region}.
         Diện tích: ${province.area}. 
         Dân số: ${province.population}. 
         Mô tả: ${province.description}.
@@ -78,17 +78,33 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
       // Hàm tìm giọng đọc tiếng Việt tối ưu
       const getViVoice = () => {
         const voices = window.speechSynthesis.getVoices();
-        // Ưu tiên các giọng có lang vi-VN
-        let viVoice = voices.find(v => v.lang === 'vi-VN' || v.lang === 'vi_VN');
+        
+        // 1. Ưu tiên Google Tiếng Việt (thường có trên Chrome/Android)
+        let viVoice = voices.find(v => v.name.includes('Google') && v.lang.includes('vi'));
+        
+        // 2. Ưu tiên Microsoft An (thường có trên Windows Edge)
+        if (!viVoice) {
+          viVoice = voices.find(v => v.name.includes('Microsoft') && v.name.includes('An') && v.lang.includes('vi'));
+        }
+        
+        // 3. Tìm các giọng có lang vi-VN (không phân biệt hoa thường)
+        if (!viVoice) {
+          viVoice = voices.find(v => 
+            v.lang.toLowerCase() === 'vi-vn' || 
+            v.lang.toLowerCase() === 'vi_vn' || 
+            v.lang.toLowerCase() === 'vi'
+          );
+        }
         
         if (!viVoice) {
-          // Tìm theo tên
+          // 4. Tìm theo tên hoặc bắt đầu bằng 'vi'
           viVoice = voices.find(v => 
             v.name.toLowerCase().includes('vietnamese') ||
             v.name.toLowerCase().includes('tiếng việt') ||
             v.name.toLowerCase().includes('huyen') ||
             v.name.toLowerCase().includes('an') ||
-            v.name.toLowerCase().includes('linh')
+            v.name.toLowerCase().includes('linh') ||
+            v.lang.toLowerCase().startsWith('vi')
           );
         }
         
@@ -99,8 +115,11 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
       if (viVoice) {
         utterance.voice = viVoice;
       } else {
+        const voices = window.speechSynthesis.getVoices();
         console.warn('Không tìm thấy giọng đọc tiếng Việt, sử dụng giọng mặc định.');
-        // Nếu không có giọng Việt, vẫn để lang là vi-VN để trình duyệt cố gắng giả lập hoặc dùng giọng phù hợp nhất
+        if (voices.length > 0) {
+          alert('Trình duyệt hoặc máy tính của bạn chưa được cài đặt giọng đọc Tiếng Việt. Hệ thống sẽ đọc bằng giọng mặc định (có thể lơ lớ tiếng Anh).\n\nMẹo: Hãy sử dụng trình duyệt Google Chrome hoặc cài đặt thêm gói ngôn ngữ Tiếng Việt cho hệ điều hành để nghe rõ nhất.');
+        }
       }
       
       utterance.onstart = () => setIsSpeaking(true);
@@ -118,7 +137,10 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
     <div className="p-6 lg:p-10 h-full overflow-y-auto">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
         <div className="flex items-center gap-3">
-          <h1 className="text-4xl font-bold text-slate-800">{province.name}</h1>
+          <div>
+            <h1 className="text-4xl font-bold text-slate-800">{province.name}</h1>
+            <p className="text-sm font-medium text-blue-600 uppercase tracking-wider mt-1">{province.region}</p>
+          </div>
           <button 
             onClick={toggleSpeech}
             className={`p-2 rounded-full transition-colors ${isSpeaking ? 'bg-blue-100 text-blue-600 animate-pulse' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'}`}
@@ -164,8 +186,8 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
         <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
           <MapPin className="text-blue-500 mt-1" />
           <div>
-            <p className="text-sm text-slate-500 font-medium">Vị trí</p>
-            <p className="text-slate-800 font-semibold">{province.location}</p>
+            <p className="text-sm text-slate-500 font-medium">Khu vực</p>
+            <p className="text-slate-800 font-semibold">{province.region}</p>
           </div>
         </div>
         <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
