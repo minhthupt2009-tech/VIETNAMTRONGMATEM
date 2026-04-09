@@ -41,10 +41,10 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
     setIsGeneratingItinerary(true);
     setError(null);
     try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      const apiKey = process.env.GEMINI_API_KEY;
       
       if (!apiKey) {
-        setError("Thiếu API Key. Vui lòng thiết lập VITE_GEMINI_API_KEY trong file .env");
+        setError("Thiếu API Key. Vui lòng thiết lập GEMINI_API_KEY trong file .env");
         setIsGeneratingItinerary(false);
         return;
       }
@@ -52,7 +52,7 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
       const ai = new GoogleGenAI({ apiKey });
       
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.5-flash',
         contents: `Đóng vai là một hướng dẫn viên du lịch địa phương, hãy tạo một lịch trình tham quan chi tiết trong 1 ngày tại địa điểm "${attraction.name}" (Việt Nam). Lịch trình cần bao gồm thời gian cụ thể, các hoạt động trải nghiệm, và gợi ý ăn uống. Trình bày bằng tiếng Việt, định dạng Markdown rõ ràng, thân thiện và hấp dẫn.`,
       });
 
@@ -89,10 +89,14 @@ export default function AttractionModal({ attraction, userLoc, onClose }: Attrac
           ) : (
             <>
               <img 
-                src={attraction.image || `https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop`} 
+                src={attraction.image || `https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop`} 
                 alt={attraction.name} 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop";
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
             </>

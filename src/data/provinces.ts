@@ -11,6 +11,8 @@ export interface Attraction {
 export interface FoodItem {
   name: string;
   image: string;
+  description?: string;
+  placesToBuy?: { name: string; address: string }[];
 }
 
 export interface Province {
@@ -52,11 +54,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bún cá Châu Đốc",
-        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop",
+        "description": "Bún cá Châu Đốc là một món ăn đặc sản trứ danh của An Giang, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm An Giang", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Gỏi cá trích Phú Quốc",
-        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop",
+        "description": "Gỏi cá trích Phú Quốc là một món ăn đặc sản trứ danh của An Giang, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm An Giang", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -65,19 +77,19 @@ export const provincesData: Record<string, Province> = {
         "lat": 10.22,
         "lng": 103.96,
         "highlights": "Đảo ngọc du lịch nghỉ dưỡng hàng đầu.",
-        "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Phu_Quoc_Beach.jpg/800px-Phu_Quoc_Beach.jpg"
       },
       {
         "name": "Miếu Bà Chúa Xứ",
         "lat": 10.68,
         "lng": 105.08,
         "highlights": "Trung tâm hành hương lớn nhất miền Nam.",
-        "image": "https://images.unsplash.com/photo-1599708153386-62bf2f0988de?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Mieu_Ba_Chua_Xu_Nui_Sam.jpg/800px-Mieu_Ba_Chua_Xu_Nui_Sam.jpg"
       }
     ],
     "lat": 10.3833,
     "lng": 105.4167,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/99/Mi%E1%BA%BFu_B%C3%A0_Ch%C3%BAa_X%E1%BB%A9_N%C3%BAi_Sam.jpg"
   },
   "Bắc Ninh": {
     "name": "Bắc Ninh",
@@ -100,11 +112,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh phu thê",
-        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh phu thê là một món ăn đặc sản trứ danh của Bắc Ninh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Bắc Ninh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Vải thiều Lục Ngạn",
-        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop",
+        "description": "Vải thiều Lục Ngạn là một món ăn đặc sản trứ danh của Bắc Ninh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Bắc Ninh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -113,7 +135,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 21.06,
         "lng": 106.04,
         "highlights": "Ngôi chùa cổ nhất Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/87/Trung_t%C3%A2m_v%C4%83n_h%C3%B3a_Kinh_B%E1%BA%AFc.jpg"
       }
     ],
     "lat": 21.1833,
@@ -141,11 +163,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Cua Cà Mau",
-        "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop",
+        "description": "Cua Cà Mau là một món ăn đặc sản trứ danh của Cà Mau, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Cà Mau", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Lẩu mắm",
-        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        "description": "Lẩu mắm là một món ăn đặc sản trứ danh của Cà Mau, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Cà Mau", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -154,14 +186,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 8.6,
         "lng": 104.73,
         "highlights": "Điểm cực Nam trên đất liền của Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Muicamau.jpg"
       },
       {
         "name": "Cánh đồng quạt gió",
         "lat": 9.23,
         "lng": 105.73,
         "highlights": "Cánh đồng điện gió trên biển lớn nhất Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/47/B%E1%BA%A1c_Li%C3%AAu_windpower_farm.jpg"
       }
     ],
     "lat": 9.1833,
@@ -189,11 +221,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Vịt quay 7 vị",
-        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop",
+        "description": "Vịt quay 7 vị là một món ăn đặc sản trứ danh của Cao Bằng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Cao Bằng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Hạt dẻ Trùng Khánh",
-        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop",
+        "description": "Hạt dẻ Trùng Khánh là một món ăn đặc sản trứ danh của Cao Bằng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Cao Bằng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -202,7 +244,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 22.85,
         "lng": 106.72,
         "highlights": "Thác nước tự nhiên lớn nhất Đông Nam Á.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Ban_Gioc_-_Detian_Falls2.jpg"
       }
     ],
     "lat": 22.6667,
@@ -230,11 +272,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Cà phê Buôn Ma Thuột",
-        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop",
+        "description": "Cà phê Buôn Ma Thuột là một món ăn đặc sản trứ danh của Đắk Lắk, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Đắk Lắk", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Gà nướng bản Đôn",
-        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop",
+        "description": "Gà nướng bản Đôn là một món ăn đặc sản trứ danh của Đắk Lắk, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Đắk Lắk", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -243,7 +295,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 12.42,
         "lng": 108.17,
         "highlights": "Hồ nước ngọt tự nhiên lớn nhất Tây Nguyên.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Tr%C3%AAn_cao_nguy%C3%AAn_%C4%90%E1%BA%AFk_L%E1%BA%AFk.JPG"
       }
     ],
     "lat": 12.6667,
@@ -271,11 +323,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Gà nướng mắc khén",
-        "image": "https://images.unsplash.com/photo-1555126634-ae235c4bcce0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1484723091791-0fee59dc0508?q=80&w=800&auto=format&fit=crop",
+        "description": "Gà nướng mắc khén là một món ăn đặc sản trứ danh của Điện Biên, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Điện Biên", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Thịt trâu gác bếp",
-        "image": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=800&auto=format&fit=crop",
+        "description": "Thịt trâu gác bếp là một món ăn đặc sản trứ danh của Điện Biên, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Điện Biên", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -284,12 +346,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 21.39,
         "lng": 103.01,
         "highlights": "Quần thể di tích lịch sử hào hùng.",
-        "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg"
       }
     ],
     "lat": 21.3853,
     "lng": 103.0181,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e8/M%C6%B0%E1%BB%9Dng_Thanh_Valley.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Victory_in_Battle_of_Dien_Bien_Phu.jpg"
   },
   "Đồng Nai": {
     "name": "Đồng Nai",
@@ -312,11 +374,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Gỏi bưởi Tân Triều",
-        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1484723091791-0fee59dc0508?q=80&w=800&auto=format&fit=crop",
+        "description": "Gỏi bưởi Tân Triều là một món ăn đặc sản trứ danh của Đồng Nai, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Đồng Nai", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Hạt điều rang muối",
-        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop",
+        "description": "Hạt điều rang muối là một món ăn đặc sản trứ danh của Đồng Nai, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Đồng Nai", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -325,7 +397,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 11.42,
         "lng": 107.42,
         "highlights": "Khu dự trữ sinh quyển thế giới.",
-        "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Nh%C3%A0_th%E1%BB%9D_ch%C3%ADnh_V%C4%83n_mi%E1%BA%BFu_Tr%E1%BA%A5n_Bi%C3%AAn.jpg"
       }
     ],
     "lat": 10.95,
@@ -353,11 +425,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Hủ tiếu Mỹ Tho",
-        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop",
+        "description": "Hủ tiếu Mỹ Tho là một món ăn đặc sản trứ danh của Đồng Tháp, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Đồng Tháp", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Nem Lai Vung",
-        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop",
+        "description": "Nem Lai Vung là một món ăn đặc sản trứ danh của Đồng Tháp, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Đồng Tháp", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -366,14 +448,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 10.73,
         "lng": 105.5,
         "highlights": "Khu bảo tồn sếu đầu đỏ quý hiếm.",
-        "image": "https://images.unsplash.com/photo-1540483761890-a1f7be05ce34?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Tram_Chim_National_Park.jpg/800px-Tram_Chim_National_Park.jpg"
       },
       {
         "name": "Chợ nổi Cái Bè",
         "lat": 10.33,
         "lng": 106.03,
         "highlights": "Văn hóa giao thương trên sông.",
-        "image": "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Cai_Be_Floating_Market.jpg/800px-Cai_Be_Floating_Market.jpg"
       }
     ],
     "lat": 10.4667,
@@ -401,11 +483,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Phở khô Gia Lai",
-        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=800&auto=format&fit=crop",
+        "description": "Phở khô Gia Lai là một món ăn đặc sản trứ danh của Gia Lai, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Gia Lai", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bánh xèo tôm nhảy",
-        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh xèo tôm nhảy là một món ăn đặc sản trứ danh của Gia Lai, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Gia Lai", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -414,14 +506,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 14.05,
         "lng": 108,
         "highlights": "Đôi mắt Pleiku trong xanh.",
-        "image": "https://images.unsplash.com/photo-1540483761890-a1f7be05ce34?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Chi%E1%BB%81u_cao_nguy%C3%AAn_-_Late_afternoon_in_the_Central_High_Plateaux_-_panoramio.jpg"
       },
       {
         "name": "Kỳ Co",
         "lat": 13.93,
         "lng": 109.3,
         "highlights": "Maldives của Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Quy-Nhon-morning-city-view-1300px.jpg"
       }
     ],
     "lat": 13.9833,
@@ -449,11 +541,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Kẹo cu đơ",
-        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop",
+        "description": "Kẹo cu đơ là một món ăn đặc sản trứ danh của Hà Tĩnh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Hà Tĩnh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Mực nhảy Vũng Áng",
-        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        "description": "Mực nhảy Vũng Áng là một món ăn đặc sản trứ danh của Hà Tĩnh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Hà Tĩnh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -462,12 +564,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 18.38,
         "lng": 105.75,
         "highlights": "Di tích lịch sử thanh niên xung phong.",
-        "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Toancanhthixa.jpg"
       }
     ],
     "lat": 18.3333,
     "lng": 105.9,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Toancanhthixa.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Hanoi_Skyline_-_NKS.jpg"
   },
   "Hưng Yên": {
     "name": "Hưng Yên",
@@ -490,11 +592,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh đậu xanh",
-        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh đậu xanh là một món ăn đặc sản trứ danh của Hưng Yên, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Hưng Yên", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Nhãn lồng",
-        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?q=80&w=800&auto=format&fit=crop",
+        "description": "Nhãn lồng là một món ăn đặc sản trứ danh của Hưng Yên, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Hưng Yên", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -503,12 +615,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 20.37,
         "lng": 106.29,
         "highlights": "Công trình kiến trúc gỗ độc đáo.",
-        "image": "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/The_grand_voyage_vinhomes_ocean_park_3.jpg"
       }
     ],
     "lat": 20.9333,
     "lng": 106.3167,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Chu_Van_An_Temple.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a2/The_grand_voyage_vinhomes_ocean_park_3.jpg"
   },
   "Khánh Hoà": {
     "name": "Khánh Hoà",
@@ -531,11 +643,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Mắt cá ngừ đại dương",
-        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        "description": "Mắt cá ngừ đại dương là một món ăn đặc sản trứ danh của Khánh Hoà, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Khánh Hoà", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Nho Ninh Thuận",
-        "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop",
+        "description": "Nho Ninh Thuận là một món ăn đặc sản trứ danh của Khánh Hoà, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Khánh Hoà", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -544,14 +666,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 12.23,
         "lng": 109.2,
         "highlights": "Một trong những vịnh biển đẹp nhất thế giới.",
-        "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Nha_Trang%2C_Kh%C3%A1nh_H%C3%B2a.png"
       },
       {
         "name": "Ghềnh Đá Đĩa",
         "lat": 13.34,
         "lng": 109.29,
         "highlights": "Kiệt tác thiên nhiên từ đá bazan.",
-        "image": "https://images.unsplash.com/photo-1509023464722-18d996393ca8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/55/Tr%E1%BA%A7n_Nh%C3%A2n_T%C3%B4ng_TL%C4%90SXSC%C4%90.png"
       }
     ],
     "lat": 12.25,
@@ -579,11 +701,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Lợn cắp nách",
-        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop",
+        "description": "Lợn cắp nách là một món ăn đặc sản trứ danh của Lai Châu, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lai Châu", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Xôi tím",
-        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        "description": "Xôi tím là một món ăn đặc sản trứ danh của Lai Châu, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lai Châu", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -592,12 +724,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 22.35,
         "lng": 103.78,
         "highlights": "Một trong tứ đại đỉnh đèo của Tây Bắc.",
-        "image": "https://images.unsplash.com/photo-1599708153386-62bf2f0988de?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Laichautown.jpg"
       }
     ],
     "lat": 22.3975,
     "lng": 103.45,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/3/33/Laichautown.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Chi%E1%BB%81u_cao_nguy%C3%AAn_-_Late_afternoon_in_the_Central_High_Plateaux_-_panoramio.jpg"
   },
   "Lâm Đồng": {
     "name": "Lâm Đồng",
@@ -620,11 +752,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh tráng nướng",
-        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh tráng nướng là một món ăn đặc sản trứ danh của Lâm Đồng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lâm Đồng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Hải sản Mũi Né",
-        "image": "https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop",
+        "description": "Hải sản Mũi Né là một món ăn đặc sản trứ danh của Lâm Đồng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lâm Đồng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -633,14 +775,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 11.94,
         "lng": 108.44,
         "highlights": "Thành phố sương mù lãng mạn.",
-        "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Da_Lat_-_Viet_Nam.jpg"
       },
       {
         "name": "Đồi cát Mũi Né",
         "lat": 10.94,
         "lng": 108.28,
         "highlights": "Tiểu sa mạc ven biển.",
-        "image": "https://images.unsplash.com/photo-1599708153386-62bf2f0988de?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Da_Lat%2C_view_to_Xuan_Huong_lake_2.jpg"
       }
     ],
     "lat": 11.9333,
@@ -668,11 +810,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Phở chua",
-        "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
+        "description": "Phở chua là một món ăn đặc sản trứ danh của Lạng Sơn, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lạng Sơn", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Vịt quay lá mắc mật",
-        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        "description": "Vịt quay lá mắc mật là một món ăn đặc sản trứ danh của Lạng Sơn, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lạng Sơn", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -681,7 +833,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 21.83,
         "lng": 106.98,
         "highlights": "Khu du lịch nghỉ dưỡng với khí hậu mát mẻ.",
-        "image": "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7d/C%E1%BB%99t_c%E1%BB%9D_L%E1%BA%A1ng_S%C6%A1n.jpg"
       }
     ],
     "lat": 21.8333,
@@ -709,11 +861,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Thắng cố",
-        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
+        "description": "Thắng cố là một món ăn đặc sản trứ danh của Lào Cai, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lào Cai", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Xôi ngũ sắc",
-        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop",
+        "description": "Xôi ngũ sắc là một món ăn đặc sản trứ danh của Lào Cai, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Lào Cai", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -722,14 +884,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 22.3,
         "lng": 103.77,
         "highlights": "Nóc nhà Đông Dương hùng vĩ.",
-        "image": "https://images.unsplash.com/photo-1559506273-620a221f51b6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Fansipan_summit_2_in_sunrise.jpg"
       },
       {
         "name": "Mù Cang Chải",
         "lat": 21.85,
         "lng": 104.08,
         "highlights": "Ruộng bậc thang đẹp nhất Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Mu_Cang_Chai_01.JPG"
       }
     ],
     "lat": 22.4833,
@@ -757,11 +919,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Súp lươn",
-        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop",
+        "description": "Súp lươn là một món ăn đặc sản trứ danh của Nghệ An, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Nghệ An", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Nhút Thanh Chương",
-        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=800&auto=format&fit=crop",
+        "description": "Nhút Thanh Chương là một món ăn đặc sản trứ danh của Nghệ An, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Nghệ An", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -770,12 +942,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 18.67,
         "lng": 105.55,
         "highlights": "Quê nội Bác Hồ.",
-        "image": "https://images.unsplash.com/photo-1509023464722-18d996393ca8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Quangtruonghochiminh.jpg"
       }
     ],
     "lat": 19.3333,
     "lng": 104.9,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Quangtruonghochiminh.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Lam_river-hong_mountain.jpg"
   },
   "Ninh Bình": {
     "name": "Ninh Bình",
@@ -798,11 +970,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Phở bò Nam Định",
-        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1484723091791-0fee59dc0508?q=80&w=800&auto=format&fit=crop",
+        "description": "Phở bò Nam Định là một món ăn đặc sản trứ danh của Ninh Bình, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Ninh Bình", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Thịt dê núi",
-        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop",
+        "description": "Thịt dê núi là một món ăn đặc sản trứ danh của Ninh Bình, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Ninh Bình", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -811,12 +993,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 20.25,
         "lng": 105.97,
         "highlights": "Di sản văn hóa và thiên nhiên thế giới.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Temple_comm%C3%A9moratif_au_roi_Dinh_Tien_Hoang_%28Hoa_Lu%29.jpg"
       }
     ],
     "lat": 20.4333,
     "lng": 106.1667,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e2/K%E1%BB%B3_%C4%91%C3%A0i_Th%C3%A0nh_Nam.png"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/be/Temple_comm%C3%A9moratif_au_roi_Dinh_Tien_Hoang_%28Hoa_Lu%29.jpg"
   },
   "Phú Thọ": {
     "name": "Phú Thọ",
@@ -839,11 +1021,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Thịt chua Thanh Sơn",
-        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop",
+        "description": "Thịt chua Thanh Sơn là một món ăn đặc sản trứ danh của Phú Thọ, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Phú Thọ", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Cơm lam Hòa Bình",
-        "image": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1484723091791-0fee59dc0508?q=80&w=800&auto=format&fit=crop",
+        "description": "Cơm lam Hòa Bình là một món ăn đặc sản trứ danh của Phú Thọ, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Phú Thọ", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -852,19 +1044,19 @@ export const provincesData: Record<string, Province> = {
         "lat": 21.36,
         "lng": 105.32,
         "highlights": "Khu di tích lịch sử quốc gia đặc biệt.",
-        "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Den_Hung_Phu_Tho.jpg/800px-Den_Hung_Phu_Tho.jpg"
       },
       {
         "name": "Tam Đảo",
         "lat": 21.45,
         "lng": 105.64,
         "highlights": "Khu nghỉ dưỡng trên núi mát mẻ.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Tam_Dao_Vinh_Phuc.jpg/800px-Tam_Dao_Vinh_Phuc.jpg"
       }
     ],
     "lat": 21.3167,
     "lng": 105.2167,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/%C4%90%C6%B0%E1%BB%9Dng_l%C3%AAn_%C4%90%E1%BB%81n_H%C3%B9ng_-_panoramio.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Trung_t%C3%A2m_Th%E1%BB%8B_x%C3%A3_Ph%C3%BA_Th%E1%BB%8D.png"
   },
   "Quảng Ngãi": {
     "name": "Quảng Ngãi",
@@ -887,11 +1079,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Tỏi Lý Sơn",
-        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop",
+        "description": "Tỏi Lý Sơn là một món ăn đặc sản trứ danh của Quảng Ngãi, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Quảng Ngãi", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Don",
-        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        "description": "Don là một món ăn đặc sản trứ danh của Quảng Ngãi, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Quảng Ngãi", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -900,7 +1102,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 15.38,
         "lng": 109.11,
         "highlights": "Vương quốc tỏi với cảnh quan núi lửa độc đáo.",
-        "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Paracel_Islands_%28Vietnamese_names%29.png"
       }
     ],
     "lat": 15.1167,
@@ -928,11 +1130,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Chả mực Hạ Long",
-        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop",
+        "description": "Chả mực Hạ Long là một món ăn đặc sản trứ danh của Quảng Ninh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Quảng Ninh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Sá sùng",
-        "image": "https://images.unsplash.com/photo-1555126634-ae235c4bcce0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop",
+        "description": "Sá sùng là một món ăn đặc sản trứ danh của Quảng Ninh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Quảng Ninh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -941,7 +1153,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 20.91,
         "lng": 107.18,
         "highlights": "Di sản thiên nhiên thế giới UNESCO.",
-        "image": "https://images.unsplash.com/photo-1599708153386-62bf2f0988de?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/V%E1%BB%8Bnh_H%E1%BA%A1_Long_-_NKS.jpg"
       }
     ],
     "lat": 21,
@@ -969,11 +1181,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh lọc",
-        "image": "https://images.unsplash.com/photo-1555126634-ae235c4bcce0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh lọc là một món ăn đặc sản trứ danh của Quảng Trị, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Quảng Trị", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Cháo canh",
-        "image": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop",
+        "description": "Cháo canh là một món ăn đặc sản trứ danh của Quảng Trị, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Quảng Trị", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -982,12 +1204,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 17.58,
         "lng": 106.28,
         "highlights": "Vương quốc hang động thế giới.",
-        "image": "https://images.unsplash.com/photo-1599708153386-62bf2f0988de?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Phongnhakebang6.jpg"
       }
     ],
     "lat": 17.4833,
     "lng": 106.6,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Son_Doong_Cave_1.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Th%C3%A0nh_c%E1%BB%95_Qu%E1%BA%A3ng_Tr%E1%BB%8B_Foto.jpg"
   },
   "Sơn La": {
     "name": "Sơn La",
@@ -1010,11 +1232,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bê chao Mộc Châu",
-        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop",
+        "description": "Bê chao Mộc Châu là một món ăn đặc sản trứ danh của Sơn La, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Sơn La", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Cá nướng Pa Pỉnh Tộp",
-        "image": "https://images.unsplash.com/photo-1548943487-a2e4f43b4850?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?q=80&w=800&auto=format&fit=crop",
+        "description": "Cá nướng Pa Pỉnh Tộp là một món ăn đặc sản trứ danh của Sơn La, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Sơn La", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1023,7 +1255,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 20.85,
         "lng": 104.63,
         "highlights": "Những đồi chè xanh mướt trải dài vô tận.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/1e/S%E1%BB%91ng_l%C6%B0ng_kh%E1%BB%A7ng_long_T%C3%A0_X%C3%B9a.jpg"
       }
     ],
     "lat": 21.328,
@@ -1051,11 +1283,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh tráng phơi sương",
-        "image": "https://images.unsplash.com/photo-1555126634-ae235c4bcce0?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh tráng phơi sương là một món ăn đặc sản trứ danh của Tây Ninh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Tây Ninh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Muối tôm Tây Ninh",
-        "image": "https://images.unsplash.com/photo-1511910849309-0dffb8785146?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop",
+        "description": "Muối tôm Tây Ninh là một món ăn đặc sản trứ danh của Tây Ninh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Tây Ninh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1064,7 +1306,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 11.37,
         "lng": 106.16,
         "highlights": "Nóc nhà Đông Nam Bộ.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Ho_dau_tieng.jpg"
       }
     ],
     "lat": 11.3,
@@ -1092,11 +1334,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Trà Tân Cương",
-        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop",
+        "description": "Trà Tân Cương là một món ăn đặc sản trứ danh của Thái Nguyên, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Thái Nguyên", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Miến dong",
-        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        "description": "Miến dong là một món ăn đặc sản trứ danh của Thái Nguyên, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Thái Nguyên", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1105,14 +1357,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 22.4,
         "lng": 105.61,
         "highlights": "Hồ nước ngọt tự nhiên trên núi lớn nhất Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/BacKan-HoBaBe_map.png"
       },
       {
         "name": "Đồi chè Tân Cương",
         "lat": 21.58,
         "lng": 105.78,
         "highlights": "Vùng chè đặc sản nổi tiếng.",
-        "image": "https://images.unsplash.com/photo-1509023464722-18d996393ca8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/19/TN_VNG_QT.jpg"
       }
     ],
     "lat": 21.5667,
@@ -1140,11 +1392,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Nem chua",
-        "image": "https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop",
+        "description": "Nem chua là một món ăn đặc sản trứ danh của Thanh Hóa, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Thanh Hóa", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Chả tôm",
-        "image": "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=800&auto=format&fit=crop",
+        "description": "Chả tôm là một món ăn đặc sản trứ danh của Thanh Hóa, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Thanh Hóa", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1153,12 +1415,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 19.73,
         "lng": 105.9,
         "highlights": "Bãi biển du lịch sầm uất.",
-        "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Sam_Son_beach.jpg"
       }
     ],
     "lat": 19.8,
     "lng": 105.7667,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/81/Le_Loi_statue.JPG"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Le_Loi_avenue.jpg"
   },
   "TP. Cần Thơ": {
     "name": "TP. Cần Thơ",
@@ -1181,11 +1443,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh xèo miền Tây",
-        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh xèo miền Tây là một món ăn đặc sản trứ danh của TP. Cần Thơ, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Cần Thơ", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bánh pía Sóc Trăng",
-        "image": "https://images.unsplash.com/photo-1604544203109-18437258056f?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh pía Sóc Trăng là một món ăn đặc sản trứ danh của TP. Cần Thơ, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Cần Thơ", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1194,14 +1466,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 10,
         "lng": 105.75,
         "highlights": "Chợ nổi sầm uất nhất miền Tây.",
-        "image": "https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Cai_Rang_Floating_Market.jpg/800px-Cai_Rang_Floating_Market.jpg"
       },
       {
         "name": "Chùa Dơi",
         "lat": 9.58,
         "lng": 105.97,
         "highlights": "Ngôi chùa Khmer cổ kính với đàn dơi khổng lồ.",
-        "image": "https://images.unsplash.com/photo-1509023464722-18d996393ca8?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Chua_Doi_Soc_Trang.jpg/800px-Chua_Doi_Soc_Trang.jpg"
       }
     ],
     "lat": 10.0333,
@@ -1229,11 +1501,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Mì Quảng",
-        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?q=80&w=800&auto=format&fit=crop",
+        "description": "Mì Quảng là một món ăn đặc sản trứ danh của TP. Đà Nẵng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Đà Nẵng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Cao lầu",
-        "image": "https://images.unsplash.com/photo-1562565652-a9e870f81419?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=800&auto=format&fit=crop",
+        "description": "Cao lầu là một món ăn đặc sản trứ danh của TP. Đà Nẵng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Đà Nẵng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1242,14 +1524,14 @@ export const provincesData: Record<string, Province> = {
         "lat": 15.88,
         "lng": 108.33,
         "highlights": "Thương cảng cổ sầm uất thế kỷ 16-17.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Hoi_An_Ancient_Town_-_Vietnam.jpg/800px-Hoi_An_Ancient_Town_-_Vietnam.jpg"
       },
       {
         "name": "Bà Nà Hills",
         "lat": 15.99,
         "lng": 107.98,
         "highlights": "Khu du lịch trên núi với Cầu Vàng nổi tiếng.",
-        "image": "https://images.unsplash.com/photo-1559506273-620a221f51b6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Golden_Bridge%2C_Ba_Na_Hills%2C_Da_Nang%2C_Vietnam.jpg/800px-Golden_Bridge%2C_Ba_Na_Hills%2C_Da_Nang%2C_Vietnam.jpg"
       }
     ],
     "lat": 16.0667,
@@ -1277,11 +1559,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Phở Hà Nội",
-        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop",
+        "description": "Phở Hà Nội là một món ăn đặc sản trứ danh của TP. Hà Nội, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Hà Nội", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bún chả",
-        "image": "https://images.unsplash.com/photo-1548943487-a2e4f43b4850?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop",
+        "description": "Bún chả là một món ăn đặc sản trứ danh của TP. Hà Nội, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Hà Nội", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1290,7 +1582,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 21.02,
         "lng": 105.85,
         "highlights": "Trái tim của thủ đô Hà Nội.",
-        "image": "https://images.unsplash.com/photo-1559506273-620a221f51b6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/10/Hanoi_Skyline_-_NKS.jpg"
       }
     ],
     "lat": 21.0285,
@@ -1318,11 +1610,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bánh đa cua",
-        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1580476262798-bddd9f4b7369?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh đa cua là một món ăn đặc sản trứ danh của TP. Hải Phòng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Hải Phòng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Nem cua bể",
-        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1548943487-a2e4f43b4850?q=80&w=800&auto=format&fit=crop",
+        "description": "Nem cua bể là một món ăn đặc sản trứ danh của TP. Hải Phòng, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Hải Phòng", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1331,7 +1633,7 @@ export const provincesData: Record<string, Province> = {
         "lat": 20.72,
         "lng": 107.04,
         "highlights": "Quần đảo xinh đẹp với hệ sinh thái đa dạng.",
-        "image": "https://images.unsplash.com/photo-1540483761890-a1f7be05ce34?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9a/View_of_the_Cai_Beo_floating_village.jpg"
       }
     ],
     "lat": 20.8449,
@@ -1359,11 +1661,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Cơm tấm",
-        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?q=80&w=800&auto=format&fit=crop",
+        "description": "Cơm tấm là một món ăn đặc sản trứ danh của TP. Hồ Chí Minh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Hồ Chí Minh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bánh khọt Vũng Tàu",
-        "image": "https://images.unsplash.com/photo-1548943487-a2e4f43b4850?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh khọt Vũng Tàu là một món ăn đặc sản trứ danh của TP. Hồ Chí Minh, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Hồ Chí Minh", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1372,19 +1684,19 @@ export const provincesData: Record<string, Province> = {
         "lat": 10.77,
         "lng": 106.69,
         "highlights": "Biểu tượng lịch sử của Sài Gòn.",
-        "image": "https://images.unsplash.com/photo-1559506273-620a221f51b6?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Ben_Thanh_Market.jpg/800px-Ben_Thanh_Market.jpg"
       },
       {
         "name": "Biển Vũng Tàu",
         "lat": 10.34,
         "lng": 107.08,
         "highlights": "Thành phố biển sôi động.",
-        "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Vung_Tau_Beach.jpg/800px-Vung_Tau_Beach.jpg"
       }
     ],
     "lat": 10.7769,
     "lng": 106.7009,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Ho_Chi_Minh_City_Skyline_%28Night%29.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/86/Ho_Chi_Minh_City%2C_City_Hall%2C_2020-01_CN-03.jpg"
   },
   "TP. Huế": {
     "name": "TP. Huế",
@@ -1407,11 +1719,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Bún bò Huế",
-        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?q=80&w=800&auto=format&fit=crop",
+        "description": "Bún bò Huế là một món ăn đặc sản trứ danh của TP. Huế, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Huế", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bánh bèo nậm lọc",
-        "image": "https://images.unsplash.com/photo-1548943487-a2e4f43b4850?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1484723091791-0fee59dc0508?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh bèo nậm lọc là một món ăn đặc sản trứ danh của TP. Huế, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm TP. Huế", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1420,12 +1742,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 16.47,
         "lng": 107.58,
         "highlights": "Hoàng thành của triều đại nhà Nguyễn.",
-        "image": "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/4/40/Th%C3%A0nh_ph%E1%BB%91_Hu%E1%BA%BF_nh%C3%ACn_t%E1%BB%AB_tr%C3%AAn_cao_%282%29.jpg"
       }
     ],
     "lat": 16.4667,
     "lng": 107.6,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/1/17/Hue_Imperial_City.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Ng%E1%BB%8D_M%C3%B4n_Hu%E1%BA%BF_-_NKS.jpg"
   },
   "Tuyên Quang": {
     "name": "Tuyên Quang",
@@ -1448,11 +1770,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Xôi ngũ sắc",
-        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1625938144755-652e08e359b7?q=80&w=800&auto=format&fit=crop",
+        "description": "Xôi ngũ sắc là một món ăn đặc sản trứ danh của Tuyên Quang, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Tuyên Quang", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bánh cuốn trứng",
-        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?q=80&w=800&auto=format&fit=crop",
+        "description": "Bánh cuốn trứng là một món ăn đặc sản trứ danh của Tuyên Quang, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Tuyên Quang", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1461,19 +1793,19 @@ export const provincesData: Record<string, Province> = {
         "lat": 23.36,
         "lng": 105.31,
         "highlights": "Điểm cực Bắc thiêng liêng của Tổ quốc.",
-        "image": "https://images.unsplash.com/photo-1540483761890-a1f7be05ce34?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/1/11/C%C3%A2y_%C4%90a_l%E1%BB%8Bch_s%E1%BB%AD_T%C3%A2n_Tr%C3%A0o.JPG"
       },
       {
         "name": "Mã Pì Lèng",
         "lat": 23.25,
         "lng": 105.4,
         "highlights": "Đệ nhất hùng quan của Việt Nam.",
-        "image": "https://images.unsplash.com/photo-1504214208698-ea1916a2195a?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/D%E1%BB%91c_Th%E1%BA%A9m_M%C3%A3_2022_-_NKS.jpg"
       }
     ],
     "lat": 22.8233,
     "lng": 104.9833,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/D%E1%BB%91c_Th%E1%BA%A9m_M%C3%A3_2022_-_NKS.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Vietnam_CT.02_Map.png"
   },
   "Vĩnh Long": {
     "name": "Vĩnh Long",
@@ -1496,11 +1828,21 @@ export const provincesData: Record<string, Province> = {
     "food": [
       {
         "name": "Kẹo dừa Bến Tre",
-        "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?q=80&w=800&auto=format&fit=crop",
+        "description": "Kẹo dừa Bến Tre là một món ăn đặc sản trứ danh của Vĩnh Long, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Vĩnh Long", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       },
       {
         "name": "Bún nước lèo",
-        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop"
+        "image": "https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop",
+        "description": "Bún nước lèo là một món ăn đặc sản trứ danh của Vĩnh Long, mang đậm hương vị truyền thống và văn hóa ẩm thực địa phương. Món ăn được chế biến tỉ mỉ từ những nguyên liệu tươi ngon nhất.",
+        "placesToBuy": [
+          { "name": "Chợ trung tâm Vĩnh Long", "address": "Khu vực chợ truyền thống" },
+          { "name": "Cửa hàng đặc sản địa phương", "address": "Các tuyến đường du lịch chính" }
+        ]
       }
     ],
     "attractions": [
@@ -1509,12 +1851,12 @@ export const provincesData: Record<string, Province> = {
         "lat": 10.33,
         "lng": 106.33,
         "highlights": "Du lịch sinh thái miệt vườn.",
-        "image": "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"
+        "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/T%C3%A0u_du_l%E1%BB%8Bch_c%E1%BA%B7p_b%E1%BA%BFn_c%E1%BB%93n_Ph%E1%BB%A5ng.jpg"
       }
     ],
     "lat": 10.25,
     "lng": 105.9667,
-    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Trung_t%C3%A2m_H%C3%A0nh_ch%C3%ADnh_t%E1%BB%89nh_V%C4%A9nh_Long.jpg"
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Thanh-pho-tan-an.jpg"
   }
 };
 

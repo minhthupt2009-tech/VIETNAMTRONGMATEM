@@ -22,9 +22,9 @@ export default function ProvinceItineraryModal({ province, onClose }: ProvinceIt
     setLoading(true);
     setError(null);
     try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      const apiKey = process.env.GEMINI_API_KEY;
       if (!apiKey) {
-        throw new Error('Vui lòng cấu hình VITE_GEMINI_API_KEY trong file .env');
+        throw new Error('Vui lòng cấu hình GEMINI_API_KEY trong file .env');
       }
 
       const ai = new GoogleGenAI({ apiKey });
@@ -44,7 +44,7 @@ export default function ProvinceItineraryModal({ province, onClose }: ProvinceIt
       `;
 
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.5-flash',
         contents: prompt,
       });
 

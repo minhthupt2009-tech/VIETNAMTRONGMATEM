@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Maximize, Users, BookOpen, Utensils, Camera, Trophy, Image as ImageIcon, TrendingUp, CloudSun, Volume2, VolumeX, Map } from 'lucide-react';
-import { Province, Attraction } from '../data/provinces';
+import { MapPin, Maximize, Users, BookOpen, Utensils, Camera, Trophy, Image as ImageIcon, TrendingUp, CloudSun, Volume2, VolumeX, Map, Search, Loader2 } from 'lucide-react';
+import { Province, Attraction, FoodItem } from '../data/provinces';
+import { getClimateDataByRegion } from '../data/climateData';
+import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import AttractionModal from './AttractionModal';
 import AttractionCard from './AttractionCard';
+import FoodCard from './FoodCard';
 import ProvinceItineraryModal from './ProvinceItineraryModal';
+import FoodModal from './FoodModal';
 
 interface ProvinceInfoProps {
   province: Province;
@@ -14,16 +18,59 @@ interface ProvinceInfoProps {
 export default function ProvinceInfo({ province, userLoc, onStartGameshow }: ProvinceInfoProps) {
   const [expanded, setExpanded] = useState(false);
   const [selectedAttraction, setSelectedAttraction] = useState<Attraction | null>(null);
+  const [selectedFood, setSelectedFood] = useState<FoodItem | null>(null);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [showItinerary, setShowItinerary] = useState(false);
+  
+  // Custom image state
+  const [customImage, setCustomImage] = useState<string | null>(null);
+  const [searchKeyword, setSearchKeyword] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
 
   // Reset state when province changes
   useEffect(() => {
     setExpanded(false);
     setSelectedAttraction(null);
+    setSelectedFood(null);
     setShowItinerary(false);
+    setCustomImage(null);
+    setSearchKeyword("");
     stopSpeaking();
   }, [province.name]);
+
+  const handleSearchImage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!searchKeyword.trim()) return;
+    
+    setIsSearching(true);
+    try {
+      // Search Wikipedia for articles matching the keyword
+      const res = await fetch(`https://vi.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=${encodeURIComponent(searchKeyword)}&gsrlimit=5&prop=pageimages&piprop=original&format=json&origin=*`);
+      const data = await res.json();
+      let foundUrl = null;
+      
+      if (data.query && data.query.pages) {
+        const pages = Object.values(data.query.pages) as any[];
+        const pageWithImage = pages.find(p => p.original && p.original.source);
+        if (pageWithImage) {
+          foundUrl = pageWithImage.original.source;
+        }
+      }
+      
+      if (foundUrl) {
+        setCustomImage(foundUrl);
+      } else {
+        alert("Không tìm thấy ảnh thực tế cho từ khóa này trên Wikipedia. Đang tạo ảnh minh họa bằng AI...");
+        setCustomImage(`https://image.pollinations.ai/prompt/${encodeURIComponent(searchKeyword + ' Vietnam beautiful landscape realistic')}?width=800&height=600&nologo=true`);
+      }
+    } catch (error) {
+      console.error("Error fetching image:", error);
+      alert("Có lỗi xảy ra khi tìm kiếm ảnh. Đang dùng ảnh AI thay thế...");
+      setCustomImage(`https://image.pollinations.ai/prompt/${encodeURIComponent(searchKeyword + ' Vietnam beautiful landscape realistic')}?width=800&height=600&nologo=true`);
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
   // Cleanup speech synthesis on unmount
   useEffect(() => {
@@ -168,15 +215,46 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
       </div>
 
       {/* Hero Image */}
-      <div className="w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-6 relative shadow-md">
+      <div className="w-full h-48 sm:h-64 rounded-2xl overflow-hidden mb-6 relative shadow-md group">
         <img 
-          src={province.image || `https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=800&auto=format&fit=crop`} 
+          src={customImage || province.image || `https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop`} 
           alt={`Phong cảnh ${province.name}`} 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=800&auto=format&fit=crop"; // Generic Vietnam landscape (Hoi An)
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-4">
-          <span className="text-white font-medium text-lg">Khám phá vẻ đẹp {province.name}</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-black/20 flex items-end p-4">
+          <span className="text-white font-medium text-lg drop-shadow-md">Khám phá vẻ đẹp {province.name}</span>
+        </div>
+        
+        {/* Custom Image Search UI */}
+        <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="bg-black/40 backdrop-blur-md p-2 rounded-xl border border-white/20 shadow-lg">
+            <form onSubmit={handleSearchImage} className="flex gap-2">
+              <input 
+                type="text" 
+                value={searchKeyword} 
+                onChange={(e) => setSearchKeyword(e.target.value)}
+                placeholder="Nhập từ khóa đổi ảnh..." 
+                className="px-3 py-1.5 text-sm bg-white/90 border-none rounded-lg focus:ring-2 focus:ring-blue-500 outline-none w-40 sm:w-56 placeholder:text-slate-500"
+              />
+              <button 
+                type="submit"
+                disabled={isSearching || !searchKeyword.trim()}
+                className="px-3 py-1.5 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors flex items-center gap-1.5 font-medium"
+              >
+                {isSearching ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Search className="w-4 h-4" />
+                )}
+                <span className="hidden sm:inline">Tìm ảnh</span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
       
@@ -219,13 +297,14 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <BookOpen className="text-blue-500" /> Văn hóa
             </h2>
-            <div className="space-y-2 bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
-              {province.culture.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2.5 shrink-0" />
-                  <p className="text-slate-700 leading-relaxed">{item}</p>
-                </div>
-              ))}
+            <div className="bg-blue-50/50 p-5 rounded-2xl border border-blue-100">
+              <ul className="list-disc pl-5 space-y-2">
+                {province.culture.map((item, idx) => (
+                  <li key={idx} className="text-slate-700 leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 
@@ -233,13 +312,14 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <TrendingUp className="text-purple-500" /> Kinh tế
             </h2>
-            <div className="space-y-2 bg-purple-50/50 p-5 rounded-2xl border border-purple-100">
-              {province.economy.map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2.5 shrink-0" />
-                  <p className="text-slate-700 leading-relaxed">{item}</p>
-                </div>
-              ))}
+            <div className="bg-purple-50/50 p-5 rounded-2xl border border-purple-100">
+              <ul className="list-disc pl-5 space-y-2">
+                {province.economy.map((item, idx) => (
+                  <li key={idx} className="text-slate-700 leading-relaxed">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
 
@@ -247,9 +327,32 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-slate-800">
               <CloudSun className="text-sky-500" /> Khí hậu
             </h2>
-            <p className="text-slate-700 leading-relaxed bg-sky-50/50 p-5 rounded-2xl border border-sky-100">
-              {province.climate}
-            </p>
+            <div className="bg-sky-50/50 p-5 rounded-2xl border border-sky-100 mb-4">
+              <p className="text-slate-700 leading-relaxed">
+                {province.climate}
+              </p>
+            </div>
+            
+            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+              <h3 className="text-lg font-semibold mb-4 text-slate-700 text-center">Biểu đồ Nhiệt độ và Lượng mưa trung bình</h3>
+              <div className="h-64 w-full">
+                <ResponsiveContainer width="100%" height="100%">
+                  <ComposedChart
+                    data={getClimateDataByRegion(province.region)}
+                    margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+                  >
+                    <CartesianGrid stroke="#f5f5f5" />
+                    <XAxis dataKey="month" scale="band" />
+                    <YAxis yAxisId="left" orientation="left" stroke="#ff7300" label={{ value: 'Nhiệt độ (°C)', angle: -90, position: 'insideLeft', offset: -10 }} />
+                    <YAxis yAxisId="right" orientation="right" stroke="#387908" label={{ value: 'Lượng mưa (mm)', angle: 90, position: 'insideRight', offset: 10 }} />
+                    <Tooltip />
+                    <Legend />
+                    <Bar yAxisId="right" dataKey="rain" name="Lượng mưa (mm)" barSize={20} fill="#413ea0" />
+                    <Line yAxisId="left" type="monotone" dataKey="temp" name="Nhiệt độ (°C)" stroke="#ff7300" strokeWidth={3} />
+                  </ComposedChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
           </section>
 
           <section>
@@ -259,17 +362,7 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {province.food.length > 0 ? (
                 province.food.map((f, i) => (
-                  <div key={i} className="group relative overflow-hidden rounded-2xl aspect-square shadow-sm border border-orange-100">
-                    <img 
-                      src={f.image} 
-                      alt={f.name} 
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
-                      referrerPolicy="no-referrer" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-orange-900/90 via-orange-900/30 to-transparent flex items-end p-3">
-                      <span className="text-white font-bold text-sm drop-shadow-md">{f.name}</span>
-                    </div>
-                  </div>
+                  <FoodCard key={i} food={f} onClick={() => setSelectedFood(f)} />
                 ))
               ) : (
                 <p className="text-slate-500 italic col-span-full">Đang cập nhật dữ liệu ẩm thực.</p>
@@ -312,6 +405,13 @@ export default function ProvinceInfo({ province, userLoc, onStartGameshow }: Pro
           onClose={() => setShowItinerary(false)}
         />
       )}
+
+      <FoodModal
+        isOpen={!!selectedFood}
+        onClose={() => setSelectedFood(null)}
+        food={selectedFood}
+        provinceName={province.name}
+      />
     </div>
   );
 }

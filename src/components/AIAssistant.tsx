@@ -4,7 +4,8 @@ import { GoogleGenAI } from '@google/genai';
 import Markdown from 'react-markdown';
 
 // Khởi tạo Gemini API
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+const apiKey = process.env.GEMINI_API_KEY;
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 interface Message {
   role: 'user' | 'model';
@@ -23,9 +24,9 @@ export default function AIAssistant() {
 
   // Khởi tạo Chat session với System Instruction
   useEffect(() => {
-    if (!chatRef.current) {
+    if (!chatRef.current && ai) {
       chatRef.current = ai.chats.create({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.5-flash',
         config: {
           systemInstruction: 'Bạn là "Bé Địa Lý", một trợ lý ảo thân thiện, vui vẻ, chuyên giải đáp các câu hỏi về địa lý, văn hóa, lịch sử, du lịch và thời tiết của 34 tỉnh thành Việt Nam (theo phân vùng hành chính mới) cho học sinh. Hãy trả lời NGẮN GỌN, ĐÚNG TRỌNG TÂM, đi thẳng vào vấn đề mà người dùng hỏi (ví dụ hỏi thời tiết thì trả lời ngay thời tiết hiện tại, không lan man). Ngôn ngữ phù hợp với trẻ em. Luôn xưng là "Bé Địa Lý" và gọi người dùng là "bạn".',
           tools: [{ googleSearch: {} }],
@@ -41,6 +42,12 @@ export default function AIAssistant() {
 
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
+
+    if (!ai || !chatRef.current) {
+      setMessages(prev => [...prev, { role: 'user', text: input.trim() }, { role: 'model', text: 'Lỗi: Chưa cấu hình GEMINI_API_KEY. Vui lòng thêm API Key vào file .env và khởi động lại ứng dụng.' }]);
+      setInput('');
+      return;
+    }
 
     const userMessage = input.trim();
     setInput('');
@@ -66,9 +73,22 @@ export default function AIAssistant() {
           });
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Gemini API Error:", error);
-      setMessages(prev => [...prev, { role: 'model', text: 'Xin lỗi, Bé Địa Lý đang gặp chút sự cố kết nối. Bạn thử lại sau nhé!' }]);
+      let errorMessage = 'Xin lỗi, Bé Địa Lý đang gặp chút sự cố kết nối. Bạn thử lại sau nhé!';
+      
+      const errorStr = error?.message || '';
+      if (errorStr.includes('API key not valid') || error?.status === 403) {
+        errorMessage = 'Lỗi xác thực API Key. Vui lòng kiểm tra lại GEMINI_API_KEY hoặc cài đặt hạn chế tên miền (domain restrictions) của API Key.';
+      } else if (errorStr.includes('Failed to fetch') || errorStr.includes('NetworkError')) {
+        errorMessage = 'Lỗi kết nối mạng hoặc bị chặn bởi CORS. Nếu bạn đang chạy trên web, hãy đảm bảo API Key không bị giới hạn tên miền (domain restrictions) sai cách.';
+      } else if (errorStr.includes('not found') || error?.status === 404) {
+        errorMessage = 'Lỗi: Không tìm thấy mô hình AI (Model not found). Vui lòng kiểm tra lại tên model trong code.';
+      } else if (error?.status === 429 || errorStr.includes('429')) {
+        errorMessage = 'Lỗi: Đã vượt quá giới hạn gọi API (Rate limit exceeded). Vui lòng thử lại sau ít phút.';
+      }
+
+      setMessages(prev => [...prev, { role: 'model', text: errorMessage }]);
       setIsLoading(false);
     }
   };

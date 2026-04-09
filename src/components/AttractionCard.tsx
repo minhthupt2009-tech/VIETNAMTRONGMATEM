@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Attraction } from '../data/provinces';
 import { GoogleGenAI } from '@google/genai';
-import { Sparkles, Image as ImageIcon, Loader2 } from 'lucide-react';
+import { Sparkles, Image as ImageIcon, Loader2, Search } from 'lucide-react';
 
 interface AttractionCardProps {
   attraction: Attraction;
@@ -16,23 +16,20 @@ export default function AttractionCard({ attraction, onClick }: AttractionCardPr
 
   useEffect(() => {
     setDescription(attraction.description || attraction.highlights);
-    setImage(attraction.image || `https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?q=80&w=400&auto=format&fit=crop`);
+    setImage(attraction.image || `https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=400&auto=format&fit=crop`);
   }, [attraction]);
-
-  const isPlaceholderImage = image.includes('picsum.photos') || image.includes('unsplash.com');
 
   const generateDescription = async (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsGeneratingDesc(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.5-flash',
         contents: `Viết một đoạn mô tả chi tiết, hấp dẫn về địa điểm du lịch "${attraction.name}" (khoảng 3-4 câu).`,
       });
       if (response.text) {
         setDescription(response.text);
-        // Optionally update the attraction object so it persists during the session
         attraction.description = response.text;
       }
     } catch (error) {
@@ -42,11 +39,32 @@ export default function AttractionCard({ attraction, onClick }: AttractionCardPr
     }
   };
 
-  const generateImage = async (e: React.MouseEvent) => {
+  const searchExactImage = async (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsGeneratingImage(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+      // 1. Try to find exact image on Wikipedia using keyword
+      const searchRes = await fetch(`https://vi.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(attraction.name)}&utf8=&format=json&origin=*`);
+      const searchData = await searchRes.json();
+      
+      if (searchData.query?.search?.length > 0) {
+        const title = searchData.query.search[0].title;
+        const imageRes = await fetch(`https://vi.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(title)}&prop=pageimages&format=json&pithumbsize=800&origin=*`);
+        const imageData = await imageRes.json();
+        const pages = imageData.query.pages;
+        const pageId = Object.keys(pages)[0];
+        
+        if (pages[pageId]?.thumbnail?.source) {
+          const newImage = pages[pageId].thumbnail.source;
+          setImage(newImage);
+          attraction.image = newImage;
+          setIsGeneratingImage(false);
+          return;
+        }
+      }
+
+      // 2. Fallback to AI Generation if Wikipedia fails
+      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash-image',
         contents: {
@@ -66,7 +84,7 @@ export default function AttractionCard({ attraction, onClick }: AttractionCardPr
         }
       }
     } catch (error) {
-      console.error("Error generating image:", error);
+      console.error("Error searching/generating image:", error);
     } finally {
       setIsGeneratingImage(false);
     }
@@ -83,19 +101,21 @@ export default function AttractionCard({ attraction, onClick }: AttractionCardPr
           alt={attraction.name} 
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = "https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=400&auto=format&fit=crop";
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
         
-        {isPlaceholderImage && (
-          <button
-            onClick={generateImage}
-            disabled={isGeneratingImage}
-            className="absolute top-2 right-2 bg-white/90 hover:bg-white text-emerald-600 p-2 rounded-full shadow-md transition-opacity disabled:opacity-50"
-            title="Tạo ảnh AI"
-          >
-            {isGeneratingImage ? <Loader2 className="w-4 h-4 animate-spin" /> : <ImageIcon className="w-4 h-4" />}
-          </button>
-        )}
+        <button
+          onClick={searchExactImage}
+          disabled={isGeneratingImage}
+          className="absolute top-2 right-2 bg-white/90 hover:bg-white text-emerald-600 p-2 rounded-full shadow-md transition-opacity disabled:opacity-50"
+          title="Tìm/Tạo ảnh chính xác"
+        >
+          {isGeneratingImage ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}
+        </button>
       </div>
       <div className="p-4 flex-1 flex flex-col">
         <h3 className="font-bold text-lg text-slate-800 group-hover:text-emerald-600 transition-colors line-clamp-1">{attraction.name}</h3>

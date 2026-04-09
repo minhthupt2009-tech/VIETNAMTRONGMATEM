@@ -227,6 +227,80 @@ const generalQuestionBank: GameQuestion[] = [
       { left: 'Đà Nẵng', right: 'gộp Quảng Nam' },
       { left: 'Quảng Trị', right: 'gộp Quảng Bình' }
     ]
+  },
+  // --- Câu hỏi Địa lý lớp 6 ---
+  {
+    id: 'g26',
+    type: 'MULTIPLE_CHOICE',
+    question: 'Theo kiến thức Địa lý lớp 6, Trái Đất có dạng hình gì?',
+    options: ['Hình tròn', 'Hình cầu', 'Hình elip', 'Hình bầu dục'],
+    correctAnswer: 'Hình cầu'
+  },
+  {
+    id: 'g27',
+    type: 'MULTIPLE_CHOICE',
+    question: 'Sự luân phiên ngày và đêm trên Trái Đất là hệ quả của chuyển động nào?',
+    options: ['Trái Đất quay quanh Mặt Trời', 'Trái Đất tự quay quanh trục', 'Mặt Trăng quay quanh Trái Đất', 'Hệ Mặt Trời quay quanh dải Ngân Hà'],
+    correctAnswer: 'Trái Đất tự quay quanh trục'
+  },
+  {
+    id: 'g28',
+    type: 'FILL_BLANK',
+    question: 'Điền từ còn thiếu: Cấu tạo bên trong của Trái Đất gồm 3 lớp: Lớp vỏ, lớp ________ và nhân (lõi).',
+    correctAnswers: ['man-ti', 'manti', 'man ti', 'Manti']
+  },
+  {
+    id: 'g29',
+    type: 'MATCHING',
+    question: 'Ghép nối các đới khí hậu trên Trái Đất với đặc điểm tương ứng:',
+    pairs: [
+      { left: 'Đới nóng (Nhiệt đới)', right: 'Nóng quanh năm, lượng mưa lớn' },
+      { left: 'Đới ôn hòa (Ôn đới)', right: 'Có 4 mùa rõ rệt, lượng mưa trung bình' },
+      { left: 'Đới lạnh (Hàn đới)', right: 'Lạnh giá quanh năm, lượng mưa ít' }
+    ]
+  },
+  {
+    id: 'g30',
+    type: 'MULTIPLE_CHOICE',
+    question: 'Dạng địa hình nào sau đây thường được hình thành do sự hòa tan của nước đối với đá vôi?',
+    options: ['Địa hình đồng bằng', 'Địa hình núi lửa', 'Địa hình Karst (hang động)', 'Địa hình cao nguyên'],
+    correctAnswer: 'Địa hình Karst (hang động)'
+  },
+  {
+    id: 'g31',
+    type: 'FILL_BLANK',
+    question: 'Tỉ lệ bản đồ 1:100.000 có nghĩa là 1cm trên bản đồ tương ứng với ________ km trên thực tế.',
+    correctAnswers: ['1', '1km', 'một']
+  },
+  {
+    id: 'g32',
+    type: 'MULTIPLE_CHOICE',
+    question: 'Thành phần nào chiếm tỉ lệ lớn nhất trong không khí?',
+    options: ['Khí Oxygen (Oxy)', 'Khí Nitrogen (Nitơ)', 'Hơi nước', 'Khí Carbonic'],
+    correctAnswer: 'Khí Nitrogen (Nitơ)'
+  },
+  {
+    id: 'g33',
+    type: 'MULTIPLE_CHOICE',
+    question: 'Nước ngầm được hình thành chủ yếu từ nguồn nào?',
+    options: ['Nước biển thấm vào đất', 'Nước mưa và nước sông hồ thấm xuống đất', 'Băng tuyết tan chảy', 'Nước từ các mạch nước nóng ngầm'],
+    correctAnswer: 'Nước mưa và nước sông hồ thấm xuống đất'
+  },
+  {
+    id: 'g34',
+    type: 'MATCHING',
+    question: 'Ghép nối các loại kí hiệu bản đồ với đối tượng thể hiện:',
+    pairs: [
+      { left: 'Kí hiệu điểm', right: 'Sân bay, cảng biển, mỏ khoáng sản' },
+      { left: 'Kí hiệu đường', right: 'Sông ngòi, đường giao thông, biên giới' },
+      { left: 'Kí hiệu diện tích', right: 'Vùng trồng lúa, khu vực đầm lầy' }
+    ]
+  },
+  {
+    id: 'g35',
+    type: 'FILL_BLANK',
+    question: 'Hiện tượng nước biển dâng lên và hạ xuống theo chu kì hàng ngày được gọi là ________.',
+    correctAnswers: ['thủy triều', 'thuỷ triều', 'Thủy triều']
   }
 ];
 
@@ -273,6 +347,34 @@ export const getProvinceQuestions = (province: Province, count: number = 5): Gam
     options: [province.population, ...wrongPops.slice(0, 3)].sort(() => 0.5 - Math.random()),
     correctAnswer: province.population
   });
+
+  // 3.5 Climate / Region (Grade 6 Geo)
+  if (province.region) {
+    let climateType = 'Nhiệt đới gió mùa';
+    if (province.region.includes('Đồng bằng sông Cửu Long') || province.region.includes('Đông Nam Bộ')) {
+      climateType = 'Nhiệt đới gió mùa cận xích đạo (2 mùa mưa khô rõ rệt)';
+    } else if (province.region.includes('Đồng bằng sông Hồng') || province.region.includes('Trung du và miền núi phía Bắc')) {
+      climateType = 'Nhiệt đới gió mùa có mùa đông lạnh';
+    } else if (province.region.includes('Tây Nguyên')) {
+      climateType = 'Nhiệt đới gió mùa cao nguyên';
+    }
+
+    const wrongClimates = [
+      'Nhiệt đới gió mùa cận xích đạo (2 mùa mưa khô rõ rệt)',
+      'Nhiệt đới gió mùa có mùa đông lạnh',
+      'Nhiệt đới gió mùa cao nguyên',
+      'Khí hậu ôn đới lục địa',
+      'Khí hậu hàn đới'
+    ].filter(c => c !== climateType).sort(() => 0.5 - Math.random());
+
+    questions.push({
+      id: `p_q35_${province.name}`,
+      type: 'MULTIPLE_CHOICE',
+      question: `Dựa vào vị trí địa lý ở vùng ${province.region}, khí hậu của ${province.name} mang đặc điểm chính nào sau đây?`,
+      options: [climateType, ...wrongClimates.slice(0, 3)].sort(() => 0.5 - Math.random()),
+      correctAnswer: climateType
+    });
+  }
 
   // 4. Food 1
   if (province.food && province.food.length > 0) {
